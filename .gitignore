@@ -1,0 +1,9 @@
+# Godot metadata
+.import/
+.export/
+.godot/
+.editor_config
+.editor_settings-*
+# Godot 4+ specific ignores
+.godot/
+/android/
