@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5x850sus4gls"]
+[gd_scene load_steps=5 format=3 uid="uid://b5x850sus4gls"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_8fpe3"]
 [ext_resource type="Texture2D" uid="uid://txucyr61ejxn" path="res://images/Start.png" id="1_n600r"]
+[ext_resource type="VideoStream" path="res://videos/output.ogv" id="3_3beme"]
+
+[sub_resource type="SystemFont" id="SystemFont_5wt72"]
 
 [node name="intro" type="Control"]
 use_parent_material = true
@@ -11,16 +14,35 @@ offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("1_8fpe3")
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.5
+offset_top = -362.5
+offset_right = 639.5
+offset_bottom = 362.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_3beme")
+autoplay = true
+expand = true
+
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("1_n600r")
 centered = false
 
 [node name="start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 915.0
-offset_top = 588.0
-offset_right = 987.0
-offset_bottom = 619.0
+offset_left = 565.0
+offset_top = 465.0
+offset_right = 733.0
+offset_bottom = 530.0
+theme_override_fonts/font = SubResource("SystemFont_5wt72")
+theme_override_font_sizes/font_size = 40
 text = "開始遊戲
 "
 
