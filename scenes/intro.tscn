@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5x850sus4gls"]
 
-[ext_resource type="Script" path="res://intro.gd" id="1_8fpe3"]
-[ext_resource type="Texture2D" uid="uid://txucyr61ejxn" path="res://images/Start.png" id="1_n600r"]
-[ext_resource type="VideoStream" path="res://videos/output.ogv" id="3_3beme"]
+[ext_resource type="Script" path="res://script/intro.gd" id="1_robql"]
+[ext_resource type="VideoStream" path="res://assets/videos/output.ogv" id="2_u8x45"]
+[ext_resource type="Texture2D" uid="uid://txucyr61ejxn" path="res://export/web/images/Start.png" id="3_m7ueh"]
 
 [sub_resource type="SystemFont" id="SystemFont_5wt72"]
 
@@ -12,7 +12,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-script = ExtResource("1_8fpe3")
+script = ExtResource("1_robql")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
@@ -27,12 +27,12 @@ offset_right = 639.5
 offset_bottom = 362.5
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("3_3beme")
+stream = ExtResource("2_u8x45")
 autoplay = true
 expand = true
 
 [node name="background" type="Sprite2D" parent="."]
-texture = ExtResource("1_n600r")
+texture = ExtResource("3_m7ueh")
 centered = false
 
 [node name="start" type="Button" parent="."]

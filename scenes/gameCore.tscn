@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://rdudyt8avttb"]
 
-[ext_resource type="Texture2D" uid="uid://cct4y0a1g8yj6" path="res://images/phoropterBlank.png" id="1_pl8wc"]
+[ext_resource type="Texture2D" uid="uid://cct4y0a1g8yj6" path="res://assets/images/phoropterBlank.png" id="1_hjuh1"]
 
 [node name="refractorGame" type="Node2D"]
 
 [node name="refractorPic" type="Sprite2D" parent="."]
 position = Vector2(649, 323)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_pl8wc")
+texture = ExtResource("1_hjuh1")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

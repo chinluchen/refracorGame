@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cct4y0a1g8yj6"
-path="res://.godot/imported/phoropterBlank.png-0405abce7c85c60d1a7371808452c1d7.ctex"
+uid="uid://b2kqc1jqojmki"
+path="res://.godot/imported/icon.svg-2a379f463509f41fc5e90a1cd52fdb6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/phoropterBlank.png"
-dest_files=["res://.godot/imported/phoropterBlank.png-0405abce7c85c60d1a7371808452c1d7.ctex"]
+source_file="res://assets/images/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-2a379f463509f41fc5e90a1cd52fdb6b.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

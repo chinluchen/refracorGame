@@ -12,7 +12,7 @@ func _ready():
 
 func _on_start_pressed():
 	print("Start button pressed, changing scene...")
-	var err = get_tree().change_scene_to_file("res://level_select.tscn")
+	var err = get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 	if err != OK:
 		print("Error changing scene:", err)
 

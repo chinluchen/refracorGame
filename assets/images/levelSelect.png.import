@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdqd6byvaldn"
-path="res://.godot/imported/handClick.png-7544109cba16ea02c7a1b3d7cd431684.ctex"
+uid="uid://chpykuwgnr3bl"
+path="res://.godot/imported/levelSelect.png-972aa6d2d44acf823a0f67b97ab5cec9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/handClick.png"
-dest_files=["res://.godot/imported/handClick.png-7544109cba16ea02c7a1b3d7cd431684.ctex"]
+source_file="res://assets/images/levelSelect.png"
+dest_files=["res://.godot/imported/levelSelect.png-972aa6d2d44acf823a0f67b97ab5cec9.ctex"]
 
 [params]
 

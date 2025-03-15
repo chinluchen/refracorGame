@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwaypn06g4nkw"]
 
-[ext_resource type="Texture2D" uid="uid://chpykuwgnr3bl" path="res://images/levelSelect.png" id="1_biepa"]
+[ext_resource type="Texture2D" uid="uid://chpykuwgnr3bl" path="res://assets/images/levelSelect.png" id="1_23v83"]
 
 [node name="levelSelect" type="Node2D"]
 
 [node name="allover" type="Sprite2D" parent="."]
-texture = ExtResource("1_biepa")
+texture = ExtResource("1_23v83")
 centered = false

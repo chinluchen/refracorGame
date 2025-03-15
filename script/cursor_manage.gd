@@ -1,8 +1,8 @@
 extends Node
 
 # 加載滑鼠指標圖片
-var hand = load("res://images/hand.png")
-var handClick = load("res://images/handClick.png")
+var hand = load("res://assets/images/hand.png")
+var handClick = load("res://assets/images/handClick.png")
 # 設定滑鼠熱點 (假設圖片大小為 32x32，將熱點設為中心)
 var hotspot = Vector2(53, 42)
 
