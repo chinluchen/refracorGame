@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rdudyt8avttb"]
 
-[ext_resource type="Texture2D" uid="uid://cct4y0a1g8yj6" path="res://assets/images/phoropterBlank.png" id="1_hjuh1"]
+[ext_resource type="Texture2D" uid="uid://cct4y0a1g8yj6" path="res://export/web/images/phoropterBlank.png" id="1_hjuh1"]
 
 [node name="refractorGame" type="Node2D"]
 
