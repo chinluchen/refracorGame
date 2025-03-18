@@ -1,5 +1,21 @@
 [gd_scene format=3 uid="uid://bwquuwuwm6t24"]
 
-[node name="Record" type="Control"]
+[node name="record" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="LogPanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LogPanel"]
+layout_mode = 2
+
+[node name="LogLabel" type="Label" parent="LogPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="BackToLevelSelect" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
