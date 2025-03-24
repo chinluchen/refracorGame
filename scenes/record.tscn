@@ -1,8 +1,18 @@
-[gd_scene format=3 uid="uid://bwquuwuwm6t24"]
+[gd_scene load_steps=3 format=3 uid="uid://bwquuwuwm6t24"]
+
+[ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_d8xet"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gmw6o"]
 
 [node name="record" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Node2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+material = SubResource("CanvasItemMaterial_gmw6o")
+texture = ExtResource("1_d8xet")
+centered = false
 
 [node name="LogPanel" type="PanelContainer" parent="."]
 layout_mode = 0
