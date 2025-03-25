@@ -1,3 +1,26 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
+.import/
+.export/
+export/
+android/
+build/
+
+# Godot temporary files
+*.godot/tmp/*
+*.translation
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# VS Code / JetBrains IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Godot Mono (C#) support
+.mono/
+*.csproj
+*.sln
