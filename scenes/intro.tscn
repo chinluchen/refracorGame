@@ -51,6 +51,7 @@ text = "開始遊戲
 "
 
 [node name="introduction" type="Button" parent="."]
+layout_mode = 0
 offset_left = 860.0
 offset_top = 641.0
 offset_right = 1216.0
