@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=23 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Texture2D" uid="uid://cskrhklwt3nwt" path="res://assets/images/EyeWindowOD.png" id="3_jvtpy"]
@@ -11,12 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://cevcamyibeip1" path="res://assets/images/hand.png" id="7_gh8xq"]
 [ext_resource type="Texture2D" uid="uid://bv25ycjlqqpw4" path="res://assets/images/ExamArrayOD.png" id="7_xlyai"]
 [ext_resource type="Texture2D" uid="uid://by8gs5ka1l6d2" path="res://assets/images/PrismOD.png" id="8_g0xfg"]
+[ext_resource type="Texture2D" uid="uid://d4hvs1r0sis2s" path="res://assets/images/ExamArrayTurning.png" id="8_rs5p3"]
 [ext_resource type="Texture2D" uid="uid://c7inutjyevhsv" path="res://assets/images/JccOD.png" id="9_7qyoe"]
+[ext_resource type="Script" path="res://scenes/exam_array_turning_od.gd" id="9_ckpe5"]
+[ext_resource type="Texture2D" uid="uid://v4o8v28gmhar" path="res://assets/images/AstigAxis.png" id="9_mkmdm"]
+[ext_resource type="Texture2D" uid="uid://dht6kyuqll5vv" path="res://assets/images/AstigPower.png" id="10_rckp2"]
 [ext_resource type="Texture2D" uid="uid://d0fn0jqpf1q5f" path="res://assets/images/ExamArrayOS.png" id="10_shkhw"]
 [ext_resource type="Texture2D" uid="uid://ntd6u5p3nubi" path="res://assets/images/PrismOS.png" id="11_2cnv1"]
 [ext_resource type="Texture2D" uid="uid://dwbt8xqxi77ru" path="res://assets/images/JccOS.png" id="12_2x6h4"]
 [ext_resource type="Texture2D" uid="uid://d14p206u4mwc3" path="res://assets/images/Phoropter.png" id="12_bnwc8"]
 [ext_resource type="Texture2D" uid="uid://csayfte6hkfwc" path="res://assets/images/PupilDistance.png" id="13_jy77c"]
+[ext_resource type="Script" path="res://scenes/exam_array_turning_os.gd" id="16_cm4vp"]
 
 [node name="refractorGame" type="Node2D"]
 
@@ -60,7 +65,7 @@ offset_left = -1068.14
 offset_top = -861.977
 offset_right = -758.138
 offset_bottom = -551.977
-rotation = 2.11185
+rotation = 4.71239
 pivot_offset = Vector2(129, 198)
 texture_normal = ExtResource("7_xlyai")
 stretch_mode = 4
@@ -92,6 +97,44 @@ offset_right = 70.1509
 offset_bottom = 72.4153
 texture_normal = ExtResource("9_7qyoe")
 
+[node name="ExamArrayTurningOD" type="TextureButton" parent="refractorPic/UI/EyeWindowOD/ExamArrayOD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.648
+anchor_right = 0.425
+anchor_bottom = 0.648
+offset_left = -25.1017
+offset_top = -25.0323
+offset_right = 24.8983
+offset_bottom = 24.9677
+texture_normal = ExtResource("8_rs5p3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("9_ckpe5")
+
+[node name="AstigAxisOD" type="TextureButton" parent="refractorPic/UI/EyeWindowOD"]
+offset_left = 11.0
+offset_top = 101.0
+offset_right = 177.0
+offset_bottom = 267.0
+texture_normal = ExtResource("9_mkmdm")
+stretch_mode = 5
+
+[node name="AstigPowerOD" type="TextureButton" parent="refractorPic/UI/EyeWindowOD/AstigAxisOD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.54
+anchor_top = 1.79
+anchor_right = 0.54
+anchor_bottom = 1.79
+offset_left = -59.5774
+offset_top = -267.577
+offset_right = 46.4226
+offset_bottom = -161.577
+texture_normal = ExtResource("10_rckp2")
+stretch_mode = 5
+
 [node name="EyeWindowOS" type="Sprite2D" parent="refractorPic/UI"]
 position = Vector2(921.25, 516.25)
 texture = ExtResource("4_3ol47")
@@ -114,7 +157,7 @@ offset_left = -682.7
 offset_top = -509.18
 offset_right = -372.7
 offset_bottom = -199.18
-rotation = -3.10669
+rotation = 4.57102
 pivot_offset = Vector2(130, 113)
 texture_normal = ExtResource("10_shkhw")
 stretch_mode = 6
@@ -145,6 +188,45 @@ offset_top = -51.3213
 offset_right = 71.1325
 offset_bottom = 68.6787
 texture_normal = ExtResource("12_2x6h4")
+
+[node name="ExamArrayTurningOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS/ExamArrayOS"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42
+anchor_top = 0.351
+anchor_right = 0.42
+anchor_bottom = 0.351
+offset_left = -28.3528
+offset_top = -28.3474
+offset_right = 28.6472
+offset_bottom = 28.6526
+texture_normal = ExtResource("8_rs5p3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("16_cm4vp")
+
+[node name="AstigAxisOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS"]
+visible = false
+offset_left = -166.75
+offset_top = 104.0
+offset_right = -0.749847
+offset_bottom = 270.0
+texture_normal = ExtResource("9_mkmdm")
+stretch_mode = 5
+
+[node name="AstigPowerOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS/AstigAxisOS"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.54
+anchor_top = 1.79
+anchor_right = 0.54
+anchor_bottom = 1.79
+offset_left = -59.5774
+offset_top = -267.577
+offset_right = 46.4226
+offset_bottom = -161.577
+texture_normal = ExtResource("10_rckp2")
+stretch_mode = 5
 
 [node name="PDandHorizon" type="Sprite2D" parent="refractorPic/UI"]
 position = Vector2(463.75, 11.25)
