@@ -1,6 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=27 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
+[ext_resource type="Texture2D" uid="uid://cu8tivjj6faa3" path="res://assets/images/firstCharacter.png" id="2_cm5ga"]
+[ext_resource type="Texture2D" uid="uid://dt2tc3vfj0o44" path="res://assets/images/blueTable.png" id="2_r8lo8"]
 [ext_resource type="Texture2D" uid="uid://cskrhklwt3nwt" path="res://assets/images/EyeWindowOD.png" id="3_jvtpy"]
 [ext_resource type="Texture2D" uid="uid://02uka0qdbdt0" path="res://assets/images/gear.png" id="3_mowfv"]
 [ext_resource type="Texture2D" uid="uid://obhifbv75fl2" path="res://assets/images/ToRecord.png" id="4_2qfj5"]
@@ -23,13 +25,24 @@
 [ext_resource type="Texture2D" uid="uid://csayfte6hkfwc" path="res://assets/images/PupilDistance.png" id="13_jy77c"]
 [ext_resource type="Script" path="res://scenes/exam_array_turning_os.gd" id="16_cm4vp"]
 [ext_resource type="Script" path="res://scenes/pd.gd" id="19_btlvh"]
+[ext_resource type="Texture2D" uid="uid://b1vnmbtl4a8yv" path="res://assets/images/controlPanel.png" id="21_ath6t"]
 
 [node name="refractorGame" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.517647)
 texture = ExtResource("1_5q3jr")
 centered = false
+
+[node name="patient" type="Sprite2D" parent="."]
+position = Vector2(534.857, 479)
+scale = Vector2(1.85013, 1.48364)
+texture = ExtResource("2_cm5ga")
+
+[node name="table" type="Sprite2D" parent="."]
+position = Vector2(637.75, 780)
+scale = Vector2(1.99823, 1.39062)
+texture = ExtResource("2_r8lo8")
 
 [node name="refractorPic" type="Sprite2D" parent="."]
 position = Vector2(554, 359)
@@ -37,11 +50,14 @@ scale = Vector2(0.8, 0.8)
 
 [node name="UI" type="Control" parent="refractorPic"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -692.0
-offset_top = -449.0
-offset_right = 507.0
-offset_bottom = 334.0
+anchor_left = -93.034
+anchor_top = 1.0
+anchor_right = -93.034
+anchor_bottom = 1.0
+offset_left = -706.966
+offset_top = -483.5
+offset_right = 492.034
+offset_bottom = 299.5
 
 [node name="EyeWindowOD" type="Sprite2D" parent="refractorPic/UI"]
 position = Vector2(425, 516.5)
@@ -229,6 +245,7 @@ texture_normal = ExtResource("10_rckp2")
 stretch_mode = 5
 
 [node name="PD" type="TextureButton" parent="refractorPic/UI"]
+layout_mode = 0
 offset_left = 386.287
 offset_top = 174.88
 offset_right = 520.287
@@ -251,29 +268,33 @@ offset_bottom = 223.404
 texture_normal = ExtResource("13_jy77c")
 stretch_mode = 5
 
-[node name="PDShow" type="Label" parent="."]
-offset_left = 436.0
-offset_top = 183.0
-offset_right = 476.0
-offset_bottom = 225.0
+[node name="PDShow" type="Label" parent="refractorPic/UI"]
+layout_mode = 0
+offset_left = 551.25
+offset_top = 233.75
+offset_right = 591.25
+offset_bottom = 275.75
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="visionTarget" type="Sprite2D" parent="."]
+[node name="controlPanel" type="Sprite2D" parent="."]
+position = Vector2(1056, 531)
+scale = Vector2(0.485474, 0.434497)
+texture = ExtResource("21_ath6t")
 
 [node name="Hand" type="Sprite2D" parent="."]
-position = Vector2(1109, 344)
+position = Vector2(1004, 146)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_gh8xq")
 
 [node name="ToRecord" type="TextureButton" parent="."]
-offset_left = 1157.0
-offset_top = 612.0
-offset_right = 1265.0
-offset_bottom = 712.0
+offset_left = 1118.0
+offset_top = 187.0
+offset_right = 1226.0
+offset_bottom = 287.0
 texture_normal = ExtResource("4_2qfj5")
 script = ExtResource("5_hdb32")
 
