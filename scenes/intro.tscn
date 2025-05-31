@@ -35,6 +35,9 @@ stream = ExtResource("2_u8x45")
 autoplay = true
 expand = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("3_5teds")
 centered = false
