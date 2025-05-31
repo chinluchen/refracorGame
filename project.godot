@@ -18,6 +18,7 @@ config/icon="res://assets/images/icon.svg"
 [autoload]
 
 CursorManage="*res://script/cursor_manage.gd"
+RefractorState="*res://refractor_state.gd"
 
 [display]
 
