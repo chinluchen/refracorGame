@@ -1,7 +1,7 @@
 extends Node
 
-var hand = load("res://assets/images/hand.png")
-var handClick = load("res://assets/images/handClick.png")
+var hand = preload("res://assets/images/hand.png")
+var handClick = preload("res://assets/images/handClick.png")
 var hotspot = Vector2(53, 40)
 
 func _ready():
