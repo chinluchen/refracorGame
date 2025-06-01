@@ -1,7 +1,7 @@
 extends TextureButton
 
 # 目標角度清單：增加一個新角度（例如 90 度）
-var target_angles = [180, 270, 59]  # 140、270、90 度
+var target_angles = [180, 300, 59]  # 140、270、90 度
 var current_index = 0  # 目前目標角度索引
 
 # 旋轉動畫的 Tween

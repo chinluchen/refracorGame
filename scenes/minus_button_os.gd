@@ -1,18 +1,18 @@
 extends Area2D
 
-@export var is_right_eye: bool = true
+@export var is_right_eye: bool = false
 @export var delta: float = -0.25
-@onready var hint := $SphereHintMinusOD
-@onready var eye_window_od := get_tree().get_root().find_child("EyeWindowOD", true, false)
+@onready var hint := $SphereHintMinusOS
+@onready var eye_window_os := get_tree().get_root().find_child("EyeWindowOS", true, false)
 
 var offset := Vector2.ZERO
 
 func _ready():
 	# 自動取得偏移
-	if eye_window_od:
-		offset = global_position - eye_window_od.global_position
+	if eye_window_os:
+		offset = global_position - eye_window_os.global_position
 	else:
-		print("⚠️ 找不到 EyeWindowOD")
+		print("⚠️ 找不到 EyeWindowOS")
 
 	# 預設隱藏 Hover 提示圖
 	hint.visible = false
@@ -23,8 +23,8 @@ func _ready():
 	mouse_exited.connect(_on_mouse_exited)
 
 func _process(_delta):
-	if eye_window_od:
-		global_position = eye_window_od.global_position + offset
+	if eye_window_os:
+		global_position = eye_window_os.global_position + offset
 
 
 func _on_input_event(_viewport, event, _shape_idx):

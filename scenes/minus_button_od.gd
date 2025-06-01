@@ -1,8 +1,8 @@
 extends Area2D
 
-@export var is_right_eye: bool = true
-@export var delta: float = 0.25
-@onready var hint := $SphereHintPlusOD
+@export var is_right_eye: bool = true	
+@export var delta: float = -0.25
+@onready var hint := $SphereHintMinusOD
 @onready var eye_window_od := get_tree().get_root().find_child("EyeWindowOD", true, false)
 
 var offset := Vector2.ZERO
