@@ -9,6 +9,10 @@ var pd_mm := 80
 var pd_min := 50
 var pd_max := 80
 
+# AstigAxis(散光角度，左眼、右眼)
+var astig_axis_angle_od: float = 0.0
+var astig_axis_angle_os: float = 0.0
+
 # 清空所有資料
 func reset():
 	sphere_od = 0.00
