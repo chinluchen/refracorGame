@@ -22,6 +22,10 @@ var steps = [
 		"text": "這是用來控制球面度數的負鏡片。"
 	},
 	{
+		"hints": ["OccluderHintOD", "OccluderHintOS"],
+		"text": "單眼檢查的時候要記得遮蓋喔～"
+	},
+	{
 		"hints": ["ExamTurnHintOD", "ExamTurnHintOS"],
 		"text": "如果需要用到稜鏡或JCC，就按這個鈕。"
 	},

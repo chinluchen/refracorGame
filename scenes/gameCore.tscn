@@ -180,7 +180,6 @@ scale = Vector2(0.592007, 0.592007)
 texture = ExtResource("10_0rij1")
 
 [node name="OccluderOD" type="Sprite2D" parent="refractorPic/UI/EyeWindowOD"]
-visible = false
 z_index = 301
 z_as_relative = false
 position = Vector2(133.75, -5.25003)
