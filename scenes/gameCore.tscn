@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=67 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Texture2D" uid="uid://cu8tivjj6faa3" path="res://assets/images/firstCharacter.png" id="2_cm5ga"]
@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://csayfte6hkfwc" path="res://assets/images/PupilDistance.png" id="13_jy77c"]
 [ext_resource type="Script" path="res://script/exam_array_turning_os.gd" id="16_cm4vp"]
 [ext_resource type="Texture2D" uid="uid://bp1gve0llir0" path="res://assets/images/SphereTurning.png" id="16_qotjb"]
-[ext_resource type="Script" path="res://script/astig_rotate_button_od.gd" id="18_u2mcy"]
 [ext_resource type="Shader" path="res://shader/astigAxis.gdshader" id="19_3r3ij"]
 [ext_resource type="Texture2D" uid="uid://b1vnmbtl4a8yv" path="res://assets/images/controlPanel.png" id="21_ath6t"]
 [ext_resource type="Script" path="res://script/astig_power_button_od.gd" id="21_kwbua"]
@@ -48,6 +47,8 @@
 [ext_resource type="Shader" path="res://shader/examArrayTurning.gdshader" id="37_wuabs"]
 [ext_resource type="Shader" path="res://shader/jccHint.gdshader" id="38_jksl4"]
 [ext_resource type="Script" path="res://script/jcc_od.gd" id="39_qvlvm"]
+[ext_resource type="Script" path="res://script/tutoria_manager.gd" id="48_uvx5r"]
+[ext_resource type="Texture2D" uid="uid://buk5ak4c6ojgy" path="res://assets/images/dialogueBubble.png" id="49_76j15"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in4jf"]
 radius = 26.9955
@@ -188,7 +189,6 @@ texture = ExtResource("4_21fft")
 
 [node name="ExamTurnOD" type="Area2D" parent="refractorPic/UI/EyeWindowOD"]
 position = Vector2(25, -16.4999)
-scale = Vector2(1, 1)
 script = ExtResource("37_7r612")
 
 [node name="ExamTurnPressOD" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOD/ExamTurnOD"]
@@ -216,7 +216,6 @@ rotation = 1.88496
 
 [node name="JccOD" type="Area2D" parent="refractorPic/UI/EyeWindowOD/ExamArrayUIOD/ExamArrayOD"]
 position = Vector2(-20, -100)
-scale = Vector2(1, 1)
 script = ExtResource("39_qvlvm")
 
 [node name="JccPressOD" type="CollisionPolygon2D" parent="refractorPic/UI/EyeWindowOD/ExamArrayUIOD/ExamArrayOD/JccOD"]
@@ -227,13 +226,11 @@ polygon = PackedVector2Array(0, -50, -22.5, -46.25, -40, -32.5, -48.75, -16.25, 
 [node name="JccRedUIOD" type="Sprite2D" parent="refractorPic/UI/EyeWindowOD/ExamArrayUIOD/ExamArrayOD/JccOD"]
 position = Vector2(-1.70854, 4.10263)
 rotation = -0.31416
-scale = Vector2(1, 1)
 texture = ExtResource("9_7qyoe")
 
 [node name="JccWhiteUIOD" type="Sprite2D" parent="refractorPic/UI/EyeWindowOD/ExamArrayUIOD/ExamArrayOD/JccOD"]
 position = Vector2(-2.06567, 4.78244)
 rotation = -1.88496
-scale = Vector2(1, 1)
 texture = ExtResource("9_7qyoe")
 
 [node name="JccRedHintOD" type="Sprite2D" parent="refractorPic/UI/EyeWindowOD/ExamArrayUIOD/ExamArrayOD/JccOD"]
@@ -271,8 +268,6 @@ texture = ExtResource("8_g0xfg")
 
 [node name="AstigAxisRotateButtonAreaOD" type="Area2D" parent="refractorPic/UI/EyeWindowOD/AstigOD"]
 position = Vector2(106.25, 183.5)
-scale = Vector2(1, 1)
-script = ExtResource("18_u2mcy")
 
 [node name="AstigAxisRotateButtonOD" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOD/AstigOD/AstigAxisRotateButtonAreaOD"]
 z_index = 999
@@ -303,7 +298,6 @@ script = ExtResource("21_kwbua")
 [node name="AstigPowerPressAreaOD" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOD/AstigOD/AstigPowerButtonAreaOD"]
 z_index = 1101
 position = Vector2(107.5, 184.75)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_73mit")
 
 [node name="AstigPowerUIOD" type="Sprite2D" parent="refractorPic/UI/EyeWindowOD/AstigOD/AstigPowerButtonAreaOD"]
@@ -756,3 +750,52 @@ offset_bottom = -536.0
 texture_normal = ExtResource("3_mowfv")
 
 [node name="TestNode" type="Node2D" parent="."]
+
+[node name="TutoriaManager" type="Node2D" parent="."]
+z_index = 1500
+script = ExtResource("48_uvx5r")
+
+[node name="TutorialBox" type="Panel" parent="TutoriaManager"]
+offset_left = 612.0
+offset_top = -172.0
+offset_right = 688.0
+offset_bottom = -102.0
+
+[node name="Background" type="TextureRect" parent="TutoriaManager/TutorialBox"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 120.0
+offset_right = 650.0
+offset_bottom = 493.0
+texture = ExtResource("49_76j15")
+expand_mode = 1
+
+[node name="TextLabel" type="Label" parent="TutoriaManager/TutorialBox"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 229.0
+offset_right = 575.0
+offset_bottom = 382.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Test"
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="TutoriaManager/TutorialBox"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 345.0
+offset_right = 578.0
+offset_bottom = 393.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.233811, 0.41546, 0.755306, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "下一步"
+flat = true
+
+[node name="TypeTimer" type="Timer" parent="TutoriaManager"]
+wait_time = 0.1
+one_shot = true
