@@ -4,6 +4,7 @@ extends Node
 @onready var next_button := $TutorialBox/NextButton
 @onready var background := $TutorialBox/Background
 @onready var type_timer := $TypeTimer
+@onready var tutorial_box := $TutorialBox
 
 var steps = [
 	{
@@ -41,9 +42,14 @@ var typed_text := ""
 var char_index := 0
 
 func _ready():
-	next_button.pressed.connect(_on_next_pressed)
 	type_timer.timeout.connect(_on_type_timer_timeout)
+	next_button.pressed.connect(_on_next_pressed)
+	tutorial_box.visible = false  # 預設隱藏
 	next_button.disabled = true
+
+func start_tutorial():
+	current_step = 0
+	tutorial_box.visible = true
 	show_step(current_step)
 
 func show_step(step_index):
@@ -70,6 +76,7 @@ func show_step(step_index):
 				hint_node.visible = true
 				current_hint.append(hint_node)
 
+	AudioRoot.play_typing()  # ✅ 開始播放連續打字音效
 	type_timer.start()
 
 func _on_type_timer_timeout():
@@ -79,9 +86,11 @@ func _on_type_timer_timeout():
 		char_index += 1
 		type_timer.start()  # 繼續下一個字
 	else:
+		AudioRoot.stop_play_typing()  # ✅ 開始播放連續打字音效
 		next_button.disabled = false
 
 func _on_next_pressed():
+	AudioRoot.play_click()  # 🔉 播放音效
 	current_step += 1
 	show_step(current_step)
 
@@ -89,4 +98,4 @@ func end_tutorial():
 	for hint in current_hint:
 		hint.visible = false
 	current_hint.clear()
-	$TutorialBox.visible = false
+	tutorial_box.visible = false

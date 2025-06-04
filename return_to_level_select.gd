@@ -6,6 +6,7 @@ func _ready():
 
 # 切換到 level_select 場景
 func _on_return_to_level_select_pressed():
+	AudioRoot.play_click()  # 🔉 播放音效
 	print("📚 ReturnToLevelSelect 按鈕已按下！")
 
 	# ✅ 切換到 level_select 場景

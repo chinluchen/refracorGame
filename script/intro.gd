@@ -12,9 +12,11 @@ func _ready():
 
 func _on_start_pressed():
 	print("Start button pressed, changing scene...")
+	AudioRoot.play_click()  # 🔉 播放音效
 	var err = get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 	if err != OK:
 		print("Error changing scene:", err)
 
 func _on_introduction_pressed():
+	AudioRoot.play_click()  # 🔉 播放音效
 	print("Introduction button pressed")

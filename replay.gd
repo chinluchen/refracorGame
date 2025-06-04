@@ -6,6 +6,7 @@ func _ready():
 
 # 重新加載 gameCore 場景
 func _on_replay_pressed():
+	AudioRoot.play_click()  # 🔉 播放音效
 	print("🎮 Replay 按鈕已按下！")
 
 	# ✅ 切換到 gameCore 場景

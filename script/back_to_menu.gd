@@ -6,6 +6,7 @@ func _ready():
 
 # 切換到 intro.tscn
 func _on_back_to_menu_pressed():
+	AudioRoot.play_click()  # 🔉 播放音效
 	print("🎉 BackToMenu 按鈕已按下！")
 	
 	# ✅ 切換到 intro 場景

@@ -19,4 +19,5 @@ func _on_mouse_exited():
 	tween.tween_property(self, "scale", default_scale, 0.1)
 
 func _on_pressed():
+	AudioRoot.play_click()  # 🔉 播放音效
 	get_tree().change_scene_to_file("res://scenes/gameCore.tscn")  # 切換場景

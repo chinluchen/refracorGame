@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cervpq2g5dbu0"]
+
+[ext_resource type="Script" path="res://assets/sounds/audio_root.gd" id="1_8kf2p"]
+[ext_resource type="AudioStream" uid="uid://yh6ix255yw18" path="res://assets/sounds/click.ogg" id="2_7y6ym"]
+[ext_resource type="AudioStream" uid="uid://1jevl3jueepi" path="res://assets/sounds/type.ogg" id="3_t3fmu"]
+
+[node name="AudioRoot" type="Node2D"]
+script = ExtResource("1_8kf2p")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7y6ym")
+
+[node name="TypingPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t3fmu")
