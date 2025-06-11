@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=85 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Script" path="res://scenes/game_core.gd" id="1_p7p74"]
@@ -49,15 +49,17 @@
 [ext_resource type="Shader" path="res://shader/jccHint.gdshader" id="38_jksl4"]
 [ext_resource type="Script" path="res://script/jcc_od.gd" id="39_qvlvm"]
 [ext_resource type="Texture2D" uid="uid://du0fu3lji68qi" path="res://assets/images/allArray.png" id="46_3ulwv"]
-[ext_resource type="Script" path="res://scenes/arrow_array_click.gd" id="46_jq0sw"]
 [ext_resource type="Texture2D" uid="uid://dcqwbq1whdm7i" path="res://assets/images/leftArrowPressed.png" id="47_6xn3j"]
 [ext_resource type="Shader" path="res://shader/arrow.gdshader" id="48_p7f6q"]
 [ext_resource type="Script" path="res://script/tutoria_manager.gd" id="48_uvx5r"]
 [ext_resource type="Texture2D" uid="uid://buk5ak4c6ojgy" path="res://assets/images/dialogueBubble.png" id="49_76j15"]
 [ext_resource type="Texture2D" uid="uid://cv21i53lianac" path="res://assets/images/leftArrow.png" id="49_obwio"]
 [ext_resource type="Texture2D" uid="uid://domv6d3rwjf5t" path="res://assets/images/rightArrow.png" id="50_j7s0l"]
+[ext_resource type="Texture2D" uid="uid://dvhatyurchnpc" path="res://assets/images/upArrowPressed.png" id="51_h8xya"]
 [ext_resource type="Texture2D" uid="uid://cb563veqtvl0j" path="res://assets/images/downArrow.png" id="51_ypaiy"]
 [ext_resource type="Texture2D" uid="uid://di27t8uc37e83" path="res://assets/images/upArrow.png" id="52_ynyd3"]
+[ext_resource type="Texture2D" uid="uid://bc2bb1bclb67h" path="res://assets/images/downArrowPressed.png" id="53_tkr2j"]
+[ext_resource type="Texture2D" uid="uid://dutjw2mk1jdeu" path="res://assets/images/rightArrowPressed.png" id="55_uvdr8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in4jf"]
 radius = 26.9955
@@ -110,16 +112,16 @@ shader = ExtResource("28_0wcc2")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_le1uv"]
 shader = ExtResource("28_ksb4v")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvrmu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ruvvl"]
 shader = ExtResource("48_p7f6q")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kqem4"]
 shader = ExtResource("48_p7f6q")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6aj7p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvrmu"]
 shader = ExtResource("48_p7f6q")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ruvvl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6aj7p"]
 shader = ExtResource("48_p7f6q")
 
 [sub_resource type="Animation" id="Animation_bitdl"]
@@ -791,66 +793,59 @@ scale = Vector2(0.545685, 0.488385)
 texture = ExtResource("21_ath6t")
 
 [node name="ArrowArray" type="Node2D" parent="controlPanel"]
-z_index = 1005
 position = Vector2(120.949, 241.613)
 scale = Vector2(1.83256, 2.04756)
-script = ExtResource("46_jq0sw")
 
 [node name="allArray" type="Sprite2D" parent="controlPanel/ArrowArray"]
-z_index = 2
 texture = ExtResource("46_3ulwv")
 
-[node name="leftArrowArea" type="Area2D" parent="controlPanel/ArrowArray/allArray"]
+[node name="upArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
 
-[node name="leftArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/leftArrowArea"]
-texture = ExtResource("47_6xn3j")
+[node name="upArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/upArrowArea"]
+texture = ExtResource("51_h8xya")
 
-[node name="leftArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/allArray/leftArrowArea"]
-polygon = PackedVector2Array(-26, -12, -40, -10, -48, -4, -48, 12, -35, 23, -11, 22, -10, 11, 0, -3)
+[node name="upArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/upArrowArea"]
+polygon = PackedVector2Array(1, -4, -26, -12, -27, -13, -34, -12, -37, -14, -36, -28, -11, -36, -4, -35, 2, -33, 14, -22, 12, -18)
 
-[node name="leftArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/leftArrowArea"]
-z_index = 3
-material = SubResource("ShaderMaterial_mvrmu")
-texture = ExtResource("49_obwio")
+[node name="upArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/upArrowArea"]
+material = SubResource("ShaderMaterial_ruvvl")
+texture = ExtResource("52_ynyd3")
 
-[node name="rightArrowArea" type="Area2D" parent="controlPanel/ArrowArray/allArray"]
+[node name="rightArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
 
-[node name="rightArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/rightArrowArea"]
-texture = ExtResource("50_j7s0l")
+[node name="rightArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/rightArrowArea"]
+texture = ExtResource("55_uvdr8")
 
-[node name="rightArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/allArray/rightArrowArea"]
+[node name="rightArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/rightArrowArea"]
 polygon = PackedVector2Array(2, -4, 13, -19, 15, -22, 33, -23, 37, -22, 50, -9, 50, 10, 39, 15, 29, 4)
 
-[node name="rightArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/rightArrowArea"]
-z_index = 3
+[node name="rightArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/rightArrowArea"]
 material = SubResource("ShaderMaterial_kqem4")
 texture = ExtResource("50_j7s0l")
 
-[node name="downArrowArea" type="Area2D" parent="controlPanel/ArrowArray/allArray"]
+[node name="leftArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
 
-[node name="downArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/downArrowArea"]
-texture = ExtResource("51_ypaiy")
+[node name="leftArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/leftArrowArea"]
+texture = ExtResource("47_6xn3j")
 
-[node name="downArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/allArray/downArrowArea"]
+[node name="leftArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/leftArrowArea"]
+polygon = PackedVector2Array(-26, -12, -40, -10, -48, -4, -48, 12, -35, 23, -11, 22, -10, 11, 0, -3)
+
+[node name="leftArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/leftArrowArea"]
+material = SubResource("ShaderMaterial_mvrmu")
+texture = ExtResource("49_obwio")
+
+[node name="downArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
+
+[node name="downArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/downArrowArea"]
+texture = ExtResource("53_tkr2j")
+
+[node name="downArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/downArrowArea"]
 polygon = PackedVector2Array(1, -4, -9, 10, -10, 12, -10, 20, -10, 23, 0, 34, 4, 35, 15, 34, 40, 28, 40, 16, 38, 16, 28, 4)
 
-[node name="downArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/downArrowArea"]
-z_index = 3
+[node name="downArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/downArrowArea"]
 material = SubResource("ShaderMaterial_6aj7p")
 texture = ExtResource("51_ypaiy")
-
-[node name="upArrowArea" type="Area2D" parent="controlPanel/ArrowArray/allArray"]
-
-[node name="upArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/upArrowArea"]
-texture = ExtResource("52_ynyd3")
-
-[node name="upArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/allArray/upArrowArea"]
-polygon = PackedVector2Array(1, -4, -26, -12, -27, -13, -34, -12, -37, -14, -36, -28, -11, -36, -4, -35, 2, -33, 14, -22, 12, -18)
-
-[node name="upArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/allArray/upArrowArea"]
-z_index = 3
-material = SubResource("ShaderMaterial_ruvvl")
-texture = ExtResource("52_ynyd3")
 
 [node name="TestNode" type="Node2D" parent="."]
 

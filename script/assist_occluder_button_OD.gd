@@ -4,10 +4,10 @@ extends Area2D
 @onready var eye_window_od := get_tree().get_root().find_child("EyeWindowOD", true, false)
 @onready var hint := $OccluderHintOD
 
-var offset := Vector2.ZERO  # 相對於 EyeWindowOD 的位移
+var offset := Vector2.ZERO  # 相對於 EyeWindowOS 的位移
 
 func _ready():
-	# 初始化：記錄目前與 EyeWindowOD 的相對位置
+	# 初始化：記錄目前與 EyeWindowOS 的相對位置
 	if eye_window_od:
 		offset = global_position - eye_window_od.global_position
 
@@ -17,6 +17,7 @@ func _ready():
 	else:
 		print("⚠️ 找不到 OccluderOD")
 
+	# 預設隱藏 Hover 提示圖
 	hint.visible = false
 
 	# 連接互動事件
@@ -25,7 +26,7 @@ func _ready():
 	mouse_exited.connect(_on_mouse_exited)
 
 func _process(_delta):
-	# 每幀更新位置，讓按鈕跟著 EyeWindowOD 移動
+	# 每幀更新位置，讓按鈕跟著 EyeWindowOS 移動
 	if eye_window_od:
 		global_position = eye_window_od.global_position + offset
 

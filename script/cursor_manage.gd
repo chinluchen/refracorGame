@@ -1,22 +1,25 @@
-extends Node
+extends CanvasLayer
+
+@onready var cursor = Sprite2D.new()
 
 var hand = preload("res://assets/images/hand.png")
-var handClick = preload("res://assets/images/handClick.png")
-var hotspot = Vector2(53, 40)
-
-var is_clicking := false  # 狀態標記
+var hand_click = preload("res://assets/images/handClick.png")
+var hotspot = Vector2(-25, -25)  # ✅ 確保啟用
 
 func _ready():
-	Input.set_custom_mouse_cursor(hand, Input.CURSOR_ARROW, hotspot)
+	add_child(cursor)
+	cursor.texture = hand
+	cursor.z_index = 1000  # 確保最上層
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN  # 隱藏系統游標
 
 func _process(_delta):
+	var mouse_pos = get_viewport().get_mouse_position()
+	cursor.global_position = mouse_pos - hotspot * cursor.scale
+
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if not is_clicking:
-			Input.set_custom_mouse_cursor(handClick, Input.CURSOR_ARROW, hotspot)
-			is_clicking = true
-			print("🖱️ [點擊] 更換為 `handClick.png`")
+		cursor.texture = hand_click
 	else:
-		if is_clicking:
-			Input.set_custom_mouse_cursor(hand, Input.CURSOR_ARROW, hotspot)
-			is_clicking = false
-			print("🖱️ [放開] 更換為 `hand.png`")
+		cursor.texture = hand
+
+	# 除錯用印出
+	# print("滑鼠位置：", mouse_pos, " ➤ 游標位置：", cursor.global_position)
