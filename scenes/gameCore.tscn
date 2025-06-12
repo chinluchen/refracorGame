@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=106 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Script" path="res://script/game_core.gd" id="1_p7p74"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://dwbt8xqxi77ru" path="res://assets/images/JccOS.png" id="12_2x6h4"]
 [ext_resource type="Texture2D" uid="uid://d14p206u4mwc3" path="res://assets/images/Phoropter.png" id="12_bnwc8"]
 [ext_resource type="Texture2D" uid="uid://csayfte6hkfwc" path="res://assets/images/PupilDistance.png" id="13_jy77c"]
-[ext_resource type="Script" path="res://script/exam_array_turning_os.gd" id="16_cm4vp"]
 [ext_resource type="Texture2D" uid="uid://bp1gve0llir0" path="res://assets/images/SphereTurning.png" id="16_qotjb"]
 [ext_resource type="Shader" path="res://shader/astigAxis.gdshader" id="19_3r3ij"]
 [ext_resource type="Texture2D" uid="uid://b1vnmbtl4a8yv" path="res://assets/images/controlPanel.png" id="21_ath6t"]
@@ -32,6 +31,7 @@
 [ext_resource type="Shader" path="res://shader/astigPowerHint.gdshader" id="23_siefq"]
 [ext_resource type="Script" path="res://script/pd_show.gd" id="24_lsjo1"]
 [ext_resource type="Script" path="res://script/PDButton.gd" id="25_ifocd"]
+[ext_resource type="Script" path="res://script/exam_turn_os.gd" id="25_pfdfh"]
 [ext_resource type="Script" path="res://script/assist_occluder_button_OD.gd" id="26_1df7p"]
 [ext_resource type="Shader" path="res://shader/pdhint.gdshader" id="26_pjp41"]
 [ext_resource type="Shader" path="res://shader/SphereHintPlus.gdshader" id="28_0wcc2"]
@@ -103,6 +103,12 @@ radius = 47.5164
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgsu5"]
 shader = ExtResource("23_siefq")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgd0r"]
+radius = 23.7514
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8or50"]
+shader = ExtResource("37_wuabs")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1tlu"]
 size = Vector2(66.25, 86.25)
@@ -483,69 +489,56 @@ position = Vector2(-138.75, -6.50021)
 scale = Vector2(1.63281, 1.63281)
 texture = ExtResource("4_21fft")
 
-[node name="ExamArrayOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS"]
-z_index = 500
-anchors_preset = -1
-anchor_left = 1.01
-anchor_top = 0.734
-anchor_right = 1.01
-anchor_bottom = 0.734
-offset_left = -682.7
-offset_top = -509.18
-offset_right = -372.7
-offset_bottom = -199.18
-rotation = 5.16967
-pivot_offset = Vector2(130, 113)
-mouse_filter = 2
-texture_normal = ExtResource("10_shkhw")
-stretch_mode = 6
-metadata/_edit_use_anchors_ = true
+[node name="ExamTurnOS" type="Area2D" parent="refractorPic/UI/EyeWindowOS"]
+position = Vector2(-6.10352e-05, -6.10352e-05)
+scale = Vector2(1, 1)
+script = ExtResource("25_pfdfh")
 
-[node name="PrismOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS/ExamArrayOS"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.273
-anchor_top = 0.658
-anchor_right = 0.273
-anchor_bottom = 0.658
-offset_left = -69.4322
-offset_top = -64.13
-offset_right = 65.5678
-offset_bottom = 70.87
-texture_normal = ExtResource("11_2cnv1")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+[node name="ExamTurnPressOS" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOS/ExamTurnOS"]
+z_index = 1001
+position = Vector2(-27.5, -7.5)
+shape = SubResource("CircleShape2D_sgd0r")
 
-[node name="JccOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS/ExamArrayOS"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.759
-anchor_top = 0.331
-anchor_right = 0.759
-anchor_bottom = 0.331
-offset_left = -48.8675
-offset_top = -51.3213
-offset_right = 71.1325
-offset_bottom = 68.6787
-texture_normal = ExtResource("12_2x6h4")
-metadata/_edit_use_anchors_ = true
+[node name="ExamTurnHintOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS/ExamTurnOS"]
+z_index = 1000
+material = SubResource("ShaderMaterial_8or50")
+position = Vector2(-27.5, -6.25)
+scale = Vector2(0.719, 0.719)
+texture = ExtResource("8_rs5p3")
 
-[node name="ExamArrayTurningOS" type="TextureButton" parent="refractorPic/UI/EyeWindowOS/ExamArrayOS"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.42
-anchor_top = 0.351
-anchor_right = 0.42
-anchor_bottom = 0.351
-offset_left = -28.3528
-offset_top = -28.3474
-offset_right = 28.6472
-offset_bottom = 28.6526
-texture_normal = ExtResource("8_rs5p3")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("16_cm4vp")
-metadata/_edit_use_anchors_ = true
+[node name="ExamArrayUIOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS"]
+z_index = 600
+position = Vector2(-27.5, -7.75)
+rotation = -1.309
+texture = ExtResource("10_shkhw")
+offset = Vector2(25, 42)
+
+[node name="ExamArrayOS" type="Node2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS"]
+position = Vector2(-26.3453, -44.2435)
+
+[node name="JccOS" type="Area2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS"]
+position = Vector2(-2.79429, -0.0665855)
+
+[node name="JccPressOS" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS/JccOS"]
+
+[node name="JccHintOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS/JccOS"]
+
+[node name="JccOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS/JccOS"]
+position = Vector2(135.541, 34.0915)
+texture = ExtResource("12_2x6h4")
+
+[node name="PrismOS" type="Area2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS"]
+position = Vector2(-0.532225, -1.13103)
+
+[node name="PrismPressOS" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS/PrismOS"]
+
+[node name="PrismHintOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS/PrismOS"]
+
+[node name="PrismOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS/ExamArrayUIOS/ExamArrayOS/PrismOS"]
+position = Vector2(-20.4948, 139.692)
+rotation = 0.418879
+scale = Vector2(1.349, 1.349)
+texture = ExtResource("11_2cnv1")
 
 [node name="AstigAxisOS" type="Sprite2D" parent="refractorPic/UI/EyeWindowOS"]
 position = Vector2(-106.25, 188.5)
@@ -732,29 +725,6 @@ material = SubResource("ShaderMaterial_le1uv")
 position = Vector2(2253.75, 786.25)
 scale = Vector2(0.443, 0.443)
 texture = ExtResource("32_b6okc")
-
-[node name="ExamArray" type="Node2D" parent="refractorPic/UI/Function"]
-
-[node name="ExamArrayOS" type="Node2D" parent="refractorPic/UI/Function/ExamArray"]
-visible = false
-
-[node name="ExamTurnOS" type="Area2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS"]
-
-[node name="ExamTurnPressOS" type="CollisionShape2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS/ExamTurnOS"]
-
-[node name="ExamTurnHintOS" type="Sprite2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS/ExamTurnOS"]
-
-[node name="JccOS" type="Area2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS"]
-
-[node name="JccPressOS" type="CollisionShape2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS/JccOS"]
-
-[node name="JccHintOS" type="Sprite2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS/JccOS"]
-
-[node name="PrismOS" type="Area2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS"]
-
-[node name="PrismPressOS" type="CollisionShape2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS/PrismOS"]
-
-[node name="PrismHintOS" type="Sprite2D" parent="refractorPic/UI/Function/ExamArray/ExamArrayOS/PrismOS"]
 
 [node name="AstigArray" type="Node2D" parent="refractorPic/UI/Function"]
 visible = false
@@ -1070,6 +1040,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
