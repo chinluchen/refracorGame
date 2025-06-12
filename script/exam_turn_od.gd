@@ -29,6 +29,7 @@ func _process(_delta):
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		AudioRoot.play_click()  # 🔉 播放音效	
 		var next_angle = target_angles[current_index]
 		current_index = (current_index + 1) % target_angles.size()
 		var tween = create_tween()

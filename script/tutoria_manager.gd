@@ -28,7 +28,15 @@ var steps = [
 	},
 	{
 		"hints": ["ExamTurnHintOD", "ExamTurnHintOS"],
-		"text": "如果需要用到稜鏡或JCC，就按這個鈕。"
+		"text": "如果需要用到稜鏡，就按這個鈕。"
+	},
+	{
+		"hints": ["ButtonHint"],
+		"text": "按下不同的按鈕選擇你要的視標。"
+	},
+	{
+		"hints": ["upArrowHint", "downArrowHint", "rightArrowHint", "leftArrowHint"],
+		"text": "使用方向鍵控制視標吧！"
 	},
 	{
 		"text": "恭喜你完成了教學關卡！練習完畢之後就開始幫患者驗光吧！"
@@ -71,8 +79,8 @@ func show_step(step_index):
 	# 顯示提示
 	if step.has("hints"):
 		for hint_name in step["hints"]:
-			var hint_node = get_tree().get_root().find_child(hint_name, true, false)
-			if hint_node:
+			var hint_nodes = get_tree().get_root().find_children(hint_name, "", true, false)
+			for hint_node in hint_nodes:
 				hint_node.visible = true
 				current_hint.append(hint_node)
 

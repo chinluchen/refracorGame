@@ -44,6 +44,7 @@ func _on_hover_exit(dir: String):
 
 func _on_pressed(viewport, event, shape_idx, dir: String):
 	if event is InputEventMouseButton and event.pressed:
+		AudioRoot.play_click()  # 🔉 播放音效
 		show_only_pressed(dir)
 		await get_tree().create_timer(0.5).timeout
 		_reset_state()
