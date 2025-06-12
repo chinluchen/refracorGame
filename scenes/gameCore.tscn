@@ -1,7 +1,7 @@
 [gd_scene load_steps=85 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
-[ext_resource type="Script" path="res://scenes/game_core.gd" id="1_p7p74"]
+[ext_resource type="Script" path="res://script/game_core.gd" id="1_p7p74"]
 [ext_resource type="Texture2D" uid="uid://cu8tivjj6faa3" path="res://assets/images/firstCharacter.png" id="2_cm5ga"]
 [ext_resource type="Texture2D" uid="uid://dt2tc3vfj0o44" path="res://assets/images/blueTable.png" id="2_r8lo8"]
 [ext_resource type="Texture2D" uid="uid://cskrhklwt3nwt" path="res://assets/images/EyeWindowOD.png" id="3_jvtpy"]
@@ -916,7 +916,6 @@ wait_time = 0.1
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
