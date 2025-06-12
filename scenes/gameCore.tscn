@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=86 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Script" path="res://script/game_core.gd" id="1_p7p74"]
@@ -49,6 +49,7 @@
 [ext_resource type="Shader" path="res://shader/jccHint.gdshader" id="38_jksl4"]
 [ext_resource type="Script" path="res://script/jcc_od.gd" id="39_qvlvm"]
 [ext_resource type="Texture2D" uid="uid://du0fu3lji68qi" path="res://assets/images/allArray.png" id="46_3ulwv"]
+[ext_resource type="Script" path="res://script/arrow_array_click.gd" id="46_inb5k"]
 [ext_resource type="Texture2D" uid="uid://dcqwbq1whdm7i" path="res://assets/images/leftArrowPressed.png" id="47_6xn3j"]
 [ext_resource type="Shader" path="res://shader/arrow.gdshader" id="48_p7f6q"]
 [ext_resource type="Script" path="res://script/tutoria_manager.gd" id="48_uvx5r"]
@@ -795,38 +796,48 @@ texture = ExtResource("21_ath6t")
 [node name="ArrowArray" type="Node2D" parent="controlPanel"]
 position = Vector2(120.949, 241.613)
 scale = Vector2(1.83256, 2.04756)
+script = ExtResource("46_inb5k")
 
 [node name="allArray" type="Sprite2D" parent="controlPanel/ArrowArray"]
 texture = ExtResource("46_3ulwv")
 
-[node name="upArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
-
-[node name="upArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/upArrowArea"]
+[node name="upArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray"]
+z_index = 3
 texture = ExtResource("51_h8xya")
+
+[node name="rightArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray"]
+z_index = 3
+texture = ExtResource("55_uvdr8")
+
+[node name="leftArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray"]
+z_index = 3
+texture = ExtResource("47_6xn3j")
+
+[node name="downArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray"]
+z_index = 3
+texture = ExtResource("53_tkr2j")
+
+[node name="upArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
 
 [node name="upArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/upArrowArea"]
 polygon = PackedVector2Array(1, -4, -26, -12, -27, -13, -34, -12, -37, -14, -36, -28, -11, -36, -4, -35, 2, -33, 14, -22, 12, -18)
 
 [node name="upArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/upArrowArea"]
+z_index = 3
 material = SubResource("ShaderMaterial_ruvvl")
 texture = ExtResource("52_ynyd3")
 
 [node name="rightArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
 
-[node name="rightArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/rightArrowArea"]
-texture = ExtResource("55_uvdr8")
-
 [node name="rightArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/rightArrowArea"]
 polygon = PackedVector2Array(2, -4, 13, -19, 15, -22, 33, -23, 37, -22, 50, -9, 50, 10, 39, 15, 29, 4)
 
 [node name="rightArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/rightArrowArea"]
+z_index = 3
 material = SubResource("ShaderMaterial_kqem4")
 texture = ExtResource("50_j7s0l")
 
 [node name="leftArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
-
-[node name="leftArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/leftArrowArea"]
-texture = ExtResource("47_6xn3j")
 
 [node name="leftArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/leftArrowArea"]
 polygon = PackedVector2Array(-26, -12, -40, -10, -48, -4, -48, 12, -35, 23, -11, 22, -10, 11, 0, -3)
@@ -837,13 +848,11 @@ texture = ExtResource("49_obwio")
 
 [node name="downArrowArea" type="Area2D" parent="controlPanel/ArrowArray"]
 
-[node name="downArrowPressed" type="Sprite2D" parent="controlPanel/ArrowArray/downArrowArea"]
-texture = ExtResource("53_tkr2j")
-
 [node name="downArrowPressedArea" type="CollisionPolygon2D" parent="controlPanel/ArrowArray/downArrowArea"]
 polygon = PackedVector2Array(1, -4, -9, 10, -10, 12, -10, 20, -10, 23, 0, 34, 4, 35, 15, 34, 40, 28, 40, 16, 38, 16, 28, 4)
 
 [node name="downArrowHint" type="Sprite2D" parent="controlPanel/ArrowArray/downArrowArea"]
+z_index = 3
 material = SubResource("ShaderMaterial_6aj7p")
 texture = ExtResource("51_ypaiy")
 
@@ -916,6 +925,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
