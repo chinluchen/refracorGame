@@ -10,6 +10,12 @@ func _ready():
 	# 動畫完成後執行教學開始
 	fade_animation.animation_finished.connect(_on_fade_animation_finished)
 
+	# 連接 chart 切換
+	$controlPanel/targetChartButton.connect(
+	"chart_button_clicked",
+	Callable($controlPanel/chart, "show_chart")
+)
+
 func _on_fade_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
 		tutorial_manager.start_tutorial()

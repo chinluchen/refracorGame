@@ -36,7 +36,7 @@ var steps = [
 	},
 	{
 		"hints": ["upArrowHint", "downArrowHint", "rightArrowHint", "leftArrowHint"],
-		"text": "使用方向鍵控制視標吧！"
+		"text": "使用方向鍵控制E視標的大小吧！"
 	},
 	{
 		"text": "恭喜你完成了教學關卡！練習完畢之後就開始幫患者驗光吧！"

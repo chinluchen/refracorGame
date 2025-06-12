@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=104 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Script" path="res://script/game_core.gd" id="1_p7p74"]
@@ -72,9 +72,10 @@
 [ext_resource type="Texture2D" uid="uid://cae3nn7a0by74" path="res://assets/images/eChartButtonPressed.png" id="64_e5f6e"]
 [ext_resource type="Texture2D" uid="uid://c8f2wjnxkmgug" path="res://assets/images/hiveButton.png" id="65_nsl4n"]
 [ext_resource type="Texture2D" uid="uid://mu7cy40oi3yj" path="res://assets/images/hiveButtonPressed.png" id="66_peo6v"]
+[ext_resource type="Script" path="res://scenes/chart.gd" id="67_edd23"]
 [ext_resource type="Texture2D" uid="uid://bvjsdnnif17u2" path="res://assets/images/chartBackground.png" id="67_pctyv"]
-[ext_resource type="Texture2D" uid="uid://b60u0kv8lnd72" path="res://assets/images/rgChart.png" id="68_lrabo"]
 [ext_resource type="Texture2D" uid="uid://0exog5fuc2cp" path="res://assets/images/eChart.png" id="69_vlrlc"]
+[ext_resource type="Texture2D" uid="uid://dwf1o73vauj74" path="res://assets/images/rgChart2.png" id="71_dlu8f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in4jf"]
 radius = 26.9955
@@ -977,6 +978,7 @@ texture = ExtResource("65_nsl4n")
 
 [node name="chart" type="Node2D" parent="controlPanel"]
 scale = Vector2(1, 1)
+script = ExtResource("67_edd23")
 
 [node name="chartBackground" type="Sprite2D" parent="controlPanel/chart"]
 z_index = -1
@@ -984,20 +986,20 @@ position = Vector2(63.2234, -143.33)
 scale = Vector2(0.75364, 0.593794)
 texture = ExtResource("67_pctyv")
 
-[node name="rgChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
-position = Vector2(-4.33838, -11.7906)
-scale = Vector2(4.23792, 4.3248)
-texture = ExtResource("68_lrabo")
+[node name="hiveChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
+position = Vector2(-10.9421, -3.44775)
+scale = Vector2(1.32689, 1.68409)
+texture = ExtResource("60_hmxrj")
 
 [node name="eChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
 position = Vector2(-10.9421, 0.000366211)
 scale = Vector2(1.32689, 1.68409)
 texture = ExtResource("69_vlrlc")
 
-[node name="hiveChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
-position = Vector2(-10.9421, -3.44788)
-scale = Vector2(1.32689, 1.68409)
-texture = ExtResource("60_hmxrj")
+[node name="rgChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
+position = Vector2(-4.33838, -11.7906)
+scale = Vector2(4.23792, 4.3248)
+texture = ExtResource("71_dlu8f")
 
 [node name="TestNode" type="Node2D" parent="."]
 
@@ -1068,7 +1070,6 @@ wait_time = 0.1
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
