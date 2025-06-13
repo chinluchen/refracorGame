@@ -19,7 +19,6 @@ func _ready():
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		print("DEBUG: Button pressed:", name)
-		ActionLogger.log_action("按下 " + name, "button")
 		emit_signal("button_clicked", name)
 
 func _on_mouse_entered():

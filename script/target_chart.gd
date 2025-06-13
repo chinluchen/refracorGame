@@ -19,10 +19,10 @@ func _on_button_clicked(clicked_name: String):
 
 	var chart_key = ""
 	match clicked_name:
-		"rgButtonArea": chart_key = "rg"
-		"eChartButtonArea": chart_key = "e"
-		"hiveButtonArea": chart_key = "hive"
+		"rgButtonArea": chart_key = "紅綠視標。"
+		"eChartButtonArea": chart_key = "E視標。"
+		"hiveButtonArea": chart_key = "蜂窩狀視標。"
 
 	print("DEBUG: Chart switched to", chart_key)
-	ActionLogger.log_action("切換 chart：" + chart_key, "chart")
+	ActionLogger.log_action("切換成：" + chart_key, "chart" + "視標。")
 	emit_signal("chart_button_clicked", chart_key)

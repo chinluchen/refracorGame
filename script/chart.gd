@@ -6,9 +6,9 @@ extends Node2D
 
 func _ready():
 	# 可選：預設顯示其中一張（或都關閉）
-	show_chart("e")
+	show_chart("E視標。")
 
 func show_chart(name: String):
-	rg_chart.visible = (name == "rg")
-	e_chart.visible  = (name == "e")
-	hive_chart.visible = (name == "hive")
+	rg_chart.visible = (name == "紅綠視標？")
+	e_chart.visible  = (name == "E視標。")
+	hive_chart.visible = (name == "蜂窩狀視標。")
