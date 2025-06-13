@@ -9,6 +9,6 @@ func _ready():
 	show_chart("E視標。")
 
 func show_chart(name: String):
-	rg_chart.visible = (name == "紅綠視標？")
+	rg_chart.visible = (name == "紅綠視標。")
 	e_chart.visible  = (name == "E視標。")
 	hive_chart.visible = (name == "蜂窩狀視標。")
