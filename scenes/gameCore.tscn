@@ -72,7 +72,7 @@
 [ext_resource type="Texture2D" uid="uid://cae3nn7a0by74" path="res://assets/images/eChartButtonPressed.png" id="64_e5f6e"]
 [ext_resource type="Texture2D" uid="uid://c8f2wjnxkmgug" path="res://assets/images/hiveButton.png" id="65_nsl4n"]
 [ext_resource type="Texture2D" uid="uid://mu7cy40oi3yj" path="res://assets/images/hiveButtonPressed.png" id="66_peo6v"]
-[ext_resource type="Script" path="res://scenes/chart.gd" id="67_edd23"]
+[ext_resource type="Script" path="res://script/chart.gd" id="67_edd23"]
 [ext_resource type="Texture2D" uid="uid://bvjsdnnif17u2" path="res://assets/images/chartBackground.png" id="67_pctyv"]
 [ext_resource type="Texture2D" uid="uid://0exog5fuc2cp" path="res://assets/images/eChart.png" id="69_vlrlc"]
 [ext_resource type="Texture2D" uid="uid://dwf1o73vauj74" path="res://assets/images/rgChart2.png" id="71_dlu8f"]
@@ -491,7 +491,6 @@ texture = ExtResource("4_21fft")
 
 [node name="ExamTurnOS" type="Area2D" parent="refractorPic/UI/EyeWindowOS"]
 position = Vector2(-6.10352e-05, -6.10352e-05)
-scale = Vector2(1, 1)
 script = ExtResource("25_pfdfh")
 
 [node name="ExamTurnPressOS" type="CollisionShape2D" parent="refractorPic/UI/EyeWindowOS/ExamTurnOS"]
@@ -860,94 +859,78 @@ position = Vector2(-31.1535, 305.087)
 texture = ExtResource("57_w15hb")
 
 [node name="rgButtonArea" type="Area2D" parent="controlPanel/targetChartButton"]
-scale = Vector2(1, 1)
 script = ExtResource("59_33cl8")
 
 [node name="ButtonArea" type="CollisionPolygon2D" parent="controlPanel/targetChartButton/rgButtonArea"]
 position = Vector2(3736.17, 1028.86)
 rotation = -2.63894
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(3768.84, -1246.01, 3774.16, -1262.95, 3763.31, -1282.69, 3751.22, -1297.07, 3726.65, -1299.92, 3700.96, -1285.8, 3688.85, -1269.79, 3685.86, -1244.79, 3699.31, -1224.14, 3718.44, -1215.96, 3743.26, -1220.26, 3760.93, -1229.97)
 
 [node name="Button" type="Sprite2D" parent="controlPanel/targetChartButton/rgButtonArea/ButtonArea"]
 position = Vector2(3729.34, -1257)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("58_4j6b0")
 
 [node name="ButtonPressed" type="Sprite2D" parent="controlPanel/targetChartButton/rgButtonArea/ButtonArea"]
 position = Vector2(3725.39, -1264.18)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("61_ley7r")
 
 [node name="ButtonHint" type="Sprite2D" parent="controlPanel/targetChartButton/rgButtonArea/ButtonArea"]
 material = SubResource("ShaderMaterial_ejhxd")
 position = Vector2(3729.34, -1257)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("58_4j6b0")
 
 [node name="eChartButtonArea" type="Area2D" parent="controlPanel/targetChartButton"]
-scale = Vector2(1, 1)
 script = ExtResource("59_33cl8")
 
 [node name="ButtonArea" type="CollisionPolygon2D" parent="controlPanel/targetChartButton/eChartButtonArea"]
 position = Vector2(3627.33, 901.656)
 rotation = -2.63894
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(3710.44, -1263.26, 3721.57, -1281.05, 3721.08, -1297.15, 3709.25, -1318.68, 3695.92, -1327.71, 3673.32, -1326.97, 3650.84, -1314.61, 3637.74, -1300.4, 3632.05, -1287.92, 3636.11, -1269.12, 3645.97, -1251.18, 3655.72, -1244.86, 3673.5, -1242.95, 3688.32, -1246.42, 3702.78, -1254.37)
 
 [node name="Button" type="Sprite2D" parent="controlPanel/targetChartButton/eChartButtonArea/ButtonArea"]
 position = Vector2(3677.61, -1284.93)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("59_agbhx")
 
 [node name="ButtonPressed" type="Sprite2D" parent="controlPanel/targetChartButton/eChartButtonArea/ButtonArea"]
 position = Vector2(3673.66, -1292.11)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("64_e5f6e")
 
 [node name="ButtonHint" type="Sprite2D" parent="controlPanel/targetChartButton/eChartButtonArea/ButtonArea"]
 material = SubResource("ShaderMaterial_ugfiq")
 position = Vector2(3677.61, -1284.93)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("59_agbhx")
 
 [node name="hiveButtonArea" type="Area2D" parent="controlPanel/targetChartButton"]
-scale = Vector2(1, 1)
 script = ExtResource("59_33cl8")
 
 [node name="ButtonArea" type="CollisionPolygon2D" parent="controlPanel/targetChartButton/hiveButtonArea"]
 position = Vector2(3712.3, 909.646)
 rotation = -2.63894
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(3721.67, -1255.64, 3706.88, -1282.56, 3695.52, -1288, 3681.94, -1289.88, 3670.33, -1288.17, 3652.67, -1278.46, 3638.58, -1266.04, 3632.89, -1253.56, 3631.4, -1241.06, 3636.7, -1227.62, 3645.21, -1215.94, 3654.34, -1206.94, 3667.92, -1205.06, 3688.55, -1209.39, 3704.6, -1218.22, 3714.49, -1230.66, 3720.8, -1245.81)
 
 [node name="Button" type="Sprite2D" parent="controlPanel/targetChartButton/hiveButtonArea/ButtonArea"]
 position = Vector2(3676.23, -1247.01)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("65_nsl4n")
 
 [node name="ButtonPressed" type="Sprite2D" parent="controlPanel/targetChartButton/hiveButtonArea/ButtonArea"]
 position = Vector2(3672.28, -1254.19)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("66_peo6v")
 
 [node name="ButtonHint" type="Sprite2D" parent="controlPanel/targetChartButton/hiveButtonArea/ButtonArea"]
 material = SubResource("ShaderMaterial_so0nb")
 position = Vector2(3676.23, -1247.01)
 rotation = 2.63894
-scale = Vector2(1, 1)
 texture = ExtResource("65_nsl4n")
 
 [node name="chart" type="Node2D" parent="controlPanel"]
-scale = Vector2(1, 1)
 script = ExtResource("67_edd23")
 
 [node name="chartBackground" type="Sprite2D" parent="controlPanel/chart"]

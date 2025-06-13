@@ -1,7 +1,6 @@
-# targetChart.gd
 extends Node2D
 
-signal chart_button_clicked(chart_name: String)  # ✅ 新增訊號
+signal chart_button_clicked(chart_name: String)
 
 @onready var buttons := [
 	$rgButtonArea,
@@ -18,11 +17,12 @@ func _on_button_clicked(clicked_name: String):
 		btn.set_selected(btn.name == clicked_name)
 	AudioRoot.play_click()
 
-	# ✅ 加上這行，通知其他節點哪個圖表要顯示
+	var chart_key = ""
 	match clicked_name:
-		"rgButtonArea":
-			emit_signal("chart_button_clicked", "rg")
-		"eChartButtonArea":
-			emit_signal("chart_button_clicked", "e")
-		"hiveButtonArea":
-			emit_signal("chart_button_clicked", "hive")
+		"rgButtonArea": chart_key = "rg"
+		"eChartButtonArea": chart_key = "e"
+		"hiveButtonArea": chart_key = "hive"
+
+	print("DEBUG: Chart switched to", chart_key)
+	ActionLogger.log_action("切換 chart：" + chart_key, "chart")
+	emit_signal("chart_button_clicked", chart_key)
