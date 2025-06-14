@@ -1,0 +1,11 @@
+# Godot 自動生成與編輯器快取
+.godot/
+.import/
+export/
+addons/
+
+# macOS 系統檔案
+.DS_Store
+
+# 自訂開發用檔案
+deploy.sh
