@@ -17,6 +17,7 @@ func _ready():
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		var new_pd = RefractorState.pd_mm + direction * delta_mm
+		AudioRoot.play_click()
 
 		# 邊界檢查並自動切換方向
 		if new_pd <= RefractorState.pd_min or new_pd >= RefractorState.pd_max:
@@ -26,6 +27,14 @@ func _on_input_event(_viewport, event, _shape_idx):
 		# 更新狀態
 		RefractorState.pd_mm = new_pd
 		_update_eye_positions()
+
+		# ✅ 加入 log，修正語法錯誤
+		var sign = "+" if direction > 0 else "-"
+		ActionLogger.log_action(
+			"PD 調整 %s%dmm ➜ 現在為 %dmm" % [sign, delta_mm, new_pd],
+			"pd調整"
+		)
+
 
 func _update_eye_positions():
 	var parent_ui = get_tree().get_root().find_child("UI", true, false)

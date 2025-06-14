@@ -34,6 +34,14 @@ func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if occluder_od:
 			occluder_od.visible = !occluder_od.visible
+			print("🎯 點擊事件觸發！")
+
+			if occluder_od.visible:
+				ActionLogger.log_action("遮蓋右眼")
+			else:
+				ActionLogger.log_action("開啟右眼")
+
+			AudioRoot.play_click()
 
 func _on_mouse_entered():
 	hint.visible = true

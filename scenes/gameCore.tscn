@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=109 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Script" path="res://script/game_core.gd" id="1_p7p74"]
@@ -74,8 +74,11 @@
 [ext_resource type="Texture2D" uid="uid://mu7cy40oi3yj" path="res://assets/images/hiveButtonPressed.png" id="66_peo6v"]
 [ext_resource type="Script" path="res://script/chart.gd" id="67_edd23"]
 [ext_resource type="Texture2D" uid="uid://bvjsdnnif17u2" path="res://assets/images/chartBackground.png" id="67_pctyv"]
-[ext_resource type="Texture2D" uid="uid://0exog5fuc2cp" path="res://assets/images/eChart.png" id="69_vlrlc"]
+[ext_resource type="Texture2D" uid="uid://bqats2t8iarla" path="res://assets/images/eChart2.png" id="70_2lk3h"]
+[ext_resource type="Texture2D" uid="uid://neq8lj1tef20" path="res://assets/images/eChartLeft.png" id="70_g8aof"]
 [ext_resource type="Texture2D" uid="uid://dwf1o73vauj74" path="res://assets/images/rgChart2.png" id="71_dlu8f"]
+[ext_resource type="Texture2D" uid="uid://cy4p83ynroop5" path="res://assets/images/eChartUp.png" id="71_xubdq"]
+[ext_resource type="Texture2D" uid="uid://bgm820lb0lfwx" path="res://assets/images/eChartDown.png" id="72_ww1yq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in4jf"]
 radius = 26.9955
@@ -784,8 +787,8 @@ position = Vector2(5, 2.5)
 [node name="AstigAxisHintOS" type="Sprite2D" parent="refractorPic/UI/Function/AstigArray/AstigArrayOS/AstigAxisAreaOS/AstigAxisOS"]
 
 [node name="controlPanel" type="Sprite2D" parent="."]
-position = Vector2(1053, 513)
-scale = Vector2(0.545685, 0.488385)
+position = Vector2(1018.7, 487.527)
+scale = Vector2(0.60878, 0.596732)
 texture = ExtResource("21_ath6t")
 
 [node name="ArrowArray" type="Node2D" parent="controlPanel"]
@@ -944,13 +947,42 @@ position = Vector2(-10.9421, -3.44775)
 scale = Vector2(1.32689, 1.68409)
 texture = ExtResource("60_hmxrj")
 
+[node name="eChartLeft" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
+visible = false
+position = Vector2(-2.17969, 2.82214)
+scale = Vector2(4.206, 4.325)
+texture = ExtResource("70_g8aof")
+
+[node name="eChartUp" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
+visible = false
+position = Vector2(-8.71851, 0.00012207)
+scale = Vector2(3.339, 4.306)
+texture = ExtResource("71_xubdq")
+
+[node name="eChartDown" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
+visible = false
+position = Vector2(-8.71851, 0)
+scale = Vector2(3.339, 4.306)
+texture = ExtResource("72_ww1yq")
+
 [node name="eChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
-position = Vector2(-10.9421, 0.000366211)
-scale = Vector2(1.32689, 1.68409)
-texture = ExtResource("69_vlrlc")
+position = Vector2(-6.86328, 2.82251)
+scale = Vector2(4.20584, 4.325)
+texture = ExtResource("70_2lk3h")
+
+[node name="snellen" type="Label" parent="controlPanel/chart/chartBackground"]
+z_index = 30
+z_as_relative = false
+offset_left = 278.586
+offset_top = -22.5691
+offset_right = 376.586
+offset_bottom = 19.4309
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "20/400"
 
 [node name="rgChart" type="Sprite2D" parent="controlPanel/chart/chartBackground"]
-position = Vector2(-4.33838, -11.7906)
+position = Vector2(-4.33838, 2.00232)
 scale = Vector2(4.23792, 4.3248)
 texture = ExtResource("71_dlu8f")
 
@@ -985,19 +1017,19 @@ offset_bottom = -102.0
 
 [node name="Background" type="TextureRect" parent="TutoriaManager/TutorialBox"]
 layout_mode = 0
-offset_left = 185.0
+offset_left = 133.0
 offset_top = 120.0
 offset_right = 650.0
-offset_bottom = 493.0
+offset_bottom = 416.0
 texture = ExtResource("49_76j15")
 expand_mode = 1
 
 [node name="TextLabel" type="Label" parent="TutoriaManager/TutorialBox"]
 layout_mode = 0
-offset_left = 222.0
-offset_top = 229.0
-offset_right = 575.0
-offset_bottom = 382.0
+offset_left = 178.0
+offset_top = 204.0
+offset_right = 566.0
+offset_bottom = 320.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Test"
@@ -1005,10 +1037,10 @@ autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="TutoriaManager/TutorialBox"]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 343.0
-offset_right = 582.0
-offset_bottom = 391.0
+offset_left = 473.0
+offset_top = 286.0
+offset_right = 565.0
+offset_bottom = 334.0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.233811, 0.41546, 0.755306, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -1023,6 +1055,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwquuwuwm6t24"]
+[gd_scene load_steps=11 format=3 uid="uid://bwquuwuwm6t24"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_d8xet"]
 [ext_resource type="Script" path="res://script/record.gd" id="1_i54p5"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://script/back_to_menu.gd" id="4_h23x0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gmw6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14omo"]
+bg_color = Color(0.1, 0.1, 0.1, 0.921569)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg74j"]
 bg_color = Color(0.407316, 0.695661, 0.731773, 1)
@@ -25,7 +28,7 @@ offset_right = 860.0
 offset_bottom = 716.0
 script = ExtResource("1_i54p5")
 
-[node name="Node2D" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.784314)
 material = SubResource("CanvasItemMaterial_gmw6o")
 texture = ExtResource("1_d8xet")
@@ -40,6 +43,7 @@ offset_left = 37.0
 offset_top = 36.0
 offset_right = 800.02
 offset_bottom = 660.3
+theme_override_styles/panel = SubResource("StyleBoxFlat_14omo")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="LogPanel"]
 layout_mode = 2
@@ -52,6 +56,8 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="LogBox" type="VBoxContainer" parent="LogPanel/ScrollContainer/MarginContainer"]
+modulate = Color(0.809659, 0.856493, 0.765189, 0.968627)
+z_index = 30
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

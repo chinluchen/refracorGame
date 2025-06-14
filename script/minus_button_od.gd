@@ -33,6 +33,7 @@ func _on_input_event(_viewport, event, _shape_idx):
 			RefractorState.add_sphere_od(delta)
 		else:
 			RefractorState.add_sphere_os(delta)
+		AudioRoot.play_click()
 
 func _on_mouse_entered():
 	hint.visible = true

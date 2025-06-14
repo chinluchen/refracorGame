@@ -37,11 +37,13 @@ func get_eye_positions():
 func add_sphere_od(delta: float):
 	sphere_od = clamp(sphere_od + delta, -20.0, 20.0)
 	_update_sphere_label("SpherePowerOD", sphere_od)
+	ActionLogger.log_action("右眼調整 %.2fD ➜ 現在為 %.2fD" % [delta, sphere_od], "sph調整")
 
 # 加減左眼度數
 func add_sphere_os(delta: float):
 	sphere_os = clamp(sphere_os + delta, -20.0, 20.0)
 	_update_sphere_label("SpherePowerOS", sphere_os)
+	ActionLogger.log_action("左眼調整 %.2fD ➜ 現在為 %.2fD" % [delta, sphere_os], "sph調整")
 
 # 更新 UI 上的 Label 顯示與顏色
 func _update_sphere_label(label_name: String, value: float):

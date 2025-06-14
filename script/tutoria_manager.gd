@@ -10,34 +10,38 @@ var steps = [
 	{
 		"text": "歡迎來到煞氣誒驗光模擬程式，接下來先快速介紹各個操作元件的功能。"
 	},
-	#{
-		#"hints": ["PDHint"],
-		#"text": "這是調整瞳孔距離(PD)的旋鈕，試著點擊看看吧。"
-	#},
-	#{
-		#"hints": ["SphereHintPlusOD", "SphereHintPlusOS"],
-		#"text": "這是用來控制球面度數的正鏡片。"
-	#},
-	#{
-		#"hints": ["SphereHintMinusOD", "SphereHintMinusOS"],
-		#"text": "這是用來控制球面度數的負鏡片。"
-	#},
-	#{
-		#"hints": ["OccluderHintOD", "OccluderHintOS"],
-		#"text": "單眼檢查的時候要記得遮蓋喔～"
-	#},
-	#{
-		#"hints": ["ExamTurnHintOD", "ExamTurnHintOS"],
-		#"text": "如果需要用到稜鏡，就按這個鈕。"
-	#},
-	#{
-		#"hints": ["ButtonHint"],
-		#"text": "按下不同的按鈕選擇你要的視標。"
-	#},
-	#{
-		#"hints": ["upArrowHint", "downArrowHint", "rightArrowHint", "leftArrowHint"],
-		#"text": "使用方向鍵控制E視標的大小吧！"
-	#},
+	{
+		"hints": ["PDHint"],
+		"text": "這是調整瞳孔距離(PD)的旋鈕，試著點擊看看吧。"
+	},
+	{
+		"hints": ["SphereHintPlusOD", "SphereHintPlusOS"],
+		"text": "這是用來控制球面度數的正鏡片。"
+	},
+	{
+		"hints": ["SphereHintMinusOD", "SphereHintMinusOS"],
+		"text": "這是用來控制球面度數的負鏡片。"
+	},
+	{
+		"hints": ["OccluderHintOD", "OccluderHintOS"],
+		"text": "單眼檢查的時候要記得遮蓋喔～"
+	},
+	{
+		"hints": ["ExamTurnHintOD", "ExamTurnHintOS"],
+		"text": "如果需要用到稜鏡，就按這個鈕。"
+	},
+	{
+		"hints": ["ButtonHint"],
+		"text": "按下不同的按鈕選擇你要的視標。"
+	},
+	{
+		"hints": ["upArrowHint", "downArrowHint"],
+		"text": "上下方向鍵控制E視標的大小。"
+	},
+	{
+		"hints": ["rightArrowHint", "leftArrowHint"],
+		"text": "左右鍵能夠隨機出現方向！"
+	},
 	{
 		"text": "恭喜你完成了教學關卡！練習完畢之後就開始幫患者驗光吧！"
 	}
