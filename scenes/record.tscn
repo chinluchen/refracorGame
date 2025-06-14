@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_d8xet"]
 [ext_resource type="Script" path="res://script/record.gd" id="1_i54p5"]
-[ext_resource type="Script" path="res://replay.gd" id="2_o32qc"]
-[ext_resource type="Script" path="res://return_to_level_select.gd" id="3_v15ep"]
+[ext_resource type="Script" path="res://script/replay.gd" id="2_o32qc"]
+[ext_resource type="Script" path="res://script/return_to_level_select.gd" id="3_v15ep"]
 [ext_resource type="Script" path="res://script/back_to_menu.gd" id="4_h23x0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gmw6o"]

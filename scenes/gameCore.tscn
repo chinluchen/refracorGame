@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://rdudyt8avttb"]
+[gd_scene load_steps=106 format=3 uid="uid://rdudyt8avttb"]
 
 [ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="1_5q3jr"]
 [ext_resource type="Script" path="res://script/game_core.gd" id="1_p7p74"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://obhifbv75fl2" path="res://assets/images/ToRecord.png" id="4_2qfj5"]
 [ext_resource type="Texture2D" uid="uid://bseqbabwisuu4" path="res://assets/images/EyeWindowOS.png" id="4_3ol47"]
 [ext_resource type="Texture2D" uid="uid://cjfqwrravnhk0" path="res://assets/images/occluder.png" id="4_21fft"]
-[ext_resource type="Script" path="res://refractor.gd" id="4_i0hju"]
+[ext_resource type="Script" path="res://script/refractor.gd" id="4_i0hju"]
 [ext_resource type="Script" path="res://script/toRecord.gd" id="5_hdb32"]
 [ext_resource type="Texture2D" uid="uid://dyu66ct4ug7fc" path="res://assets/images/AssistLensArray.png" id="5_njx8t"]
 [ext_resource type="Texture2D" uid="uid://bv25ycjlqqpw4" path="res://assets/images/ExamArrayOD.png" id="7_xlyai"]
@@ -76,7 +76,6 @@
 [ext_resource type="Texture2D" uid="uid://bvjsdnnif17u2" path="res://assets/images/chartBackground.png" id="67_pctyv"]
 [ext_resource type="Texture2D" uid="uid://0exog5fuc2cp" path="res://assets/images/eChart.png" id="69_vlrlc"]
 [ext_resource type="Texture2D" uid="uid://dwf1o73vauj74" path="res://assets/images/rgChart2.png" id="71_dlu8f"]
-[ext_resource type="FontFile" uid="uid://byqit86vbuu0o" path="res://fonts/Cubic_11.ttf" id="77_3pgvl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_in4jf"]
 radius = 26.9955
@@ -1000,7 +999,6 @@ offset_top = 229.0
 offset_right = 575.0
 offset_bottom = 382.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("77_3pgvl")
 theme_override_font_sizes/font_size = 28
 text = "Test"
 autowrap_mode = 2
