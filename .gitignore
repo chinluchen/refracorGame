@@ -1,21 +1,3 @@
-# macOS 系統檔
-.DS_Store
-
-# Godot 編輯器設定
+# Godot 4+ specific ignores
 .godot/
-.import/
-export/
-addons/
-
-# 編輯器個人設定（不應加入版本控制）
-.godot/editor/
-
-# 匯出檔案（如 HTML、WASM 等）
-*.html
-*.js
-*.pck
-*.wasm
-*.import
-
-# 專案本地 build 腳本
-deploy.sh
+/android/

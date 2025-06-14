@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/intro.gd" id="1_robql"]
 [ext_resource type="VideoStream" path="res://assets/videos/output.ogv" id="2_u8x45"]
-[ext_resource type="Texture2D" uid="uid://cvqs4t01m7mo3" path="res://assets/images/background.png" id="3_5teds"]
+[ext_resource type="Texture2D" uid="uid://bih6l5tqg2pn8" path="res://assets/images/background.png" id="3_5teds"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajhra"]
 bg_color = Color(0.929427, 0.720448, 0.398881, 1)
