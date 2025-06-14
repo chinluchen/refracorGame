@@ -1,8 +1,0 @@
-res://scenes/gameCore.tscn::384f4a120cc50ecc22fae86fa5dc66c5::1742818712::res://.godot/exported/133200997/export-091743c1efd20f0316a19aabb23d31be-gameCore.scn
-res://scenes/intro.tscn::8e3723868f5ebc0365a62d2d2e8dc020::1742818712::res://.godot/exported/133200997/export-aa3f5c97579d5c748215bbb2e364ddeb-intro.scn
-res://scenes/level_select.tscn::8fc14b20274e5030996862b6d270a636::1742818712::res://.godot/exported/133200997/export-0c939b19205267a005b2e63ce5e60e4d-level_select.scn
-res://scenes/start.tscn::87b1ee71b352230c65efcb0e59b70fa4::1742818712::res://.godot/exported/133200997/export-e2cd3ad146e88a9ce40b77a5da0ea9b1-start.scn
-res://scenes/record.tscn::1910f5a9ae0279fd3e77166c30d30dee::1742818712::res://.godot/exported/133200997/export-c8095f6f4d632de59ead4404c9c0da89-record.scn
-res://gameCore.tscn::55f3d0d8f1611ef318504ae8f9cad34a::1742286936::res://.godot/exported/133200997/export-df5a8029f368d9cb3b4a0e363d5d139d-gameCore.scn
-res://level_select.tscn::cec386f7be4b5c18519f5d117afff2da::1742286936::res://.godot/exported/133200997/export-24303b58e3fb8bb6e6240e9ab61336b8-level_select.scn
-res://start.tscn::a2556b4e683aa3dd39c59c42178fed69::1742286936::res://.godot/exported/133200997/export-f6e8b96a6111f62e406d12d8b3ddab90-start.scn
