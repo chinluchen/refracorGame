@@ -9,6 +9,9 @@ func _on_back_to_menu_pressed():
 	AudioRoot.play_click()  # 🔉 播放音效
 	print("🎉 BackToMenu 按鈕已按下！")
 	
+	# ✅ 重置 Log
+	ActionLogger.clear_logs()
+	
 	# ✅ 切換到 intro 場景
 	var error_code = get_tree().change_scene_to_file("res://scenes/intro.tscn")
 

@@ -7,10 +7,11 @@ var hand_click = preload("res://assets/images/handClick.png")
 var hotspot = Vector2(-25, -25)  # ✅ 確保啟用
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)  # ✅ 改這行，確保正確隱藏
 	add_child(cursor)
 	cursor.texture = hand
-	cursor.z_index = 1000  # 確保最上層
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN  # 隱藏系統游標
+	cursor.z_index = 1300
+	print("🖱️ 自訂游標已載入並隱藏系統游標")
 
 func _process(_delta):
 	var mouse_pos = get_viewport().get_mouse_position()
