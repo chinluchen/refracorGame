@@ -4,17 +4,14 @@ func _ready():
 	# 自動連接 BackToMenu 按鈕的 pressed() 信號
 	self.connect("pressed", Callable(self, "_on_back_to_menu_pressed"))
 
-# 切換到 intro.tscn
 func _on_back_to_menu_pressed():
 	AudioRoot.play_click()  # 🔉 播放音效
 	print("🎉 BackToMenu 按鈕已按下！")
 	
-	# ✅ 重置 Log
-	ActionLogger.clear_logs()
+	ActionLogger.clear_logs()  # ✅ 清除 log
 	
-	# ✅ 切換到 intro 場景
-	var error_code = get_tree().change_scene_to_file("res://scenes/intro.tscn")
+	var packed = load("res://scenes/intro.tscn")
+	var error_code = get_tree().change_scene_to_packed(packed)
 
-	# ✅ 檢查是否有錯誤
 	if error_code != OK:
 		print("❌ 切換失敗，請檢查場景路徑或錯誤代碼！")

@@ -1,3 +1,4 @@
+#record.gd
 extends Control
 
 @onready var log_box := $LogPanel/ScrollContainer/MarginContainer/LogBox  # VBoxContainer
