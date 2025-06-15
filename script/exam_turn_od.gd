@@ -1,16 +1,15 @@
-# File: exam_turn_od.gd
 extends Area2D
 
-@onready var exam_array_ui_od = get_tree().get_root().find_child("ExamArrayUIOD", true, false)  # ExamArrayUIOD
-@onready var eye_window_od := get_tree().get_root().find_child("EyeWindowOD", true, false)
+@onready var exam_array_ui_od = get_tree().get_root().find_child("ExamArrayUIOD", true, false)
+@onready var eye_window_od = get_tree().get_root().find_child("EyeWindowOD", true, false)
 @onready var hint = get_tree().get_root().find_child("ExamTurnHintOD", true, false)
 
-var offset := Vector2.ZERO  # 相對於 EyeWindowOD 的位移
+var offset := Vector2.ZERO
 var target_angles = [-240, -5, -108]
+var action_labels = ["使用稜鏡", "使用 JCC", "移除功能矩陣"]
 var current_index = 0
 
 func _ready():
-	# 自動取得偏移
 	if eye_window_od:
 		offset = global_position - eye_window_od.global_position
 	else:
@@ -22,21 +21,24 @@ func _ready():
 	mouse_exited.connect(_on_mouse_exited)
 
 func _process(_delta):
-	# 每幀更新位置，讓按鈕跟著 EyeWindowOD 移動
 	if eye_window_od:
 		global_position = eye_window_od.global_position + offset
 
-
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		AudioRoot.play_click()  # 🔉 播放音效	
+		AudioRoot.play_click()
+		
 		var next_angle = target_angles[current_index]
-		current_index = (current_index + 1) % target_angles.size()
-		var tween = create_tween()
+		var label = action_labels[current_index]  # ✅ 取得對應語意
 
-		# 旋轉 UI 圖片（ExamTurnHintOD）
+		current_index = (current_index + 1) % target_angles.size()
+
+		var tween = create_tween()
 		tween.tween_property(exam_array_ui_od, "rotation_degrees", next_angle, 0.3)\
 			.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+
+		# ✅ 加入語意 log
+		ActionLogger.log_action("OD:" + label, "exam_turn")
 
 func _on_mouse_entered():
 	hint.visible = true

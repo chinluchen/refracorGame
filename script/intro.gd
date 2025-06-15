@@ -12,6 +12,7 @@ func _ready():
 	AudioRoot.play_bgm_for_scene("intro")
 
 func _on_start_pressed():
+	SceneManager.temp_log_string = ActionLogger.export_logs_to_string()
 	print("Start button pressed, changing scene...")
 	AudioRoot.play_click()  # 🔉 播放音效
 	var packed = load("res://scenes/level_select.tscn")

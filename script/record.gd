@@ -4,6 +4,9 @@ extends Control
 @onready var log_box := $LogPanel/ScrollContainer/MarginContainer/LogBox  # VBoxContainer
 
 func _ready():
+	# 還原 logs
+	ActionLogger.import_logs_from_string(SceneManager.temp_log_string)	
+	
 	var actions = ActionLogger.get_actions()
 	print("📥 進入 record 場景，log 數量：", actions.size())
 	update_display(actions)

@@ -9,6 +9,8 @@ func _on_replay_pressed():
 	AudioRoot.play_click()  # 🔉 播放音效
 	print("🎮 Replay 按鈕已按下！")
 
+	SceneManager.temp_log_string = ActionLogger.export_logs_to_string()
+
 	# ✅ 清除 Log（這段若不希望重置記憶可註解）
 	ActionLogger.clear_logs()
 

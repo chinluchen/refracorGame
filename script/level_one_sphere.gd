@@ -19,5 +19,6 @@ func _on_mouse_exited():
 
 func _on_pressed():
 	AudioRoot.play_click()  # 🔉 播放音效
+	SceneManager.temp_log_string = ActionLogger.export_logs_to_string()
 	var packed = load("res://scenes/gameCoreLevel1.tscn")
 	get_tree().change_scene_to_packed(packed)

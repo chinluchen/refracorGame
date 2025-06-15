@@ -21,6 +21,7 @@ CursorManage="*res://script/cursor_manage.gd"
 RefractorState="*res://script/refractor_state.gd"
 AudioRoot="*res://assets/sounds/audio_root.tscn"
 ActionLogger="*res://script/action_logger.gd"
+SceneManager="*res://scene_manager.gd"
 
 [display]
 

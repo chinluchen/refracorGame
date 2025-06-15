@@ -8,6 +8,9 @@ func _ready():
 	fade_animation.play("fade_in")
 	AudioRoot.play_bgm_for_scene("gamecore")
 
+# 還原 logs
+	ActionLogger.import_logs_from_string(SceneManager.temp_log_string)
+
 	# 動畫完成後執行教學開始
 	fade_animation.animation_finished.connect(_on_fade_animation_finished)
 

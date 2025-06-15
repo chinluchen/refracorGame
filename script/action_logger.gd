@@ -5,7 +5,6 @@ var logs: Array = []
 @onready var log_container: VBoxContainer = null
 @onready var log_font: Font = preload("res://fonts/cubic_11.woff2")  # 確保這個檔案已存在
 
-# 💡 為了相容 record.gd，也提供 actions 別名（不然會報錯）
 func get_actions() -> Array:
 	return logs
 
@@ -14,13 +13,10 @@ func _ready():
 
 func log_action(name: String, category: String = "", extra := {}):
 	logs.append({
-		#"time": Time.get_ticks_msec(),
 		"action": name,
 		"category": category,
-		#"data": extra
 	})
 
-	# 若目前場景中有 LogBox 就即時新增
 	if log_container:
 		var label = Label.new()
 		label.add_theme_font_override("font", log_font)
@@ -34,3 +30,13 @@ func clear_logs():
 	if log_container:
 		for child in log_container.get_children():
 			child.queue_free()
+
+# ✅ 新增：logs → JSON 字串
+func export_logs_to_string() -> String:
+	return JSON.stringify(logs)
+
+# ✅ 新增：JSON 字串 → logs
+func import_logs_from_string(data: String):
+	var result = JSON.parse_string(data)
+	if typeof(result) == TYPE_ARRAY:
+		logs = result

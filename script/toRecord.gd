@@ -18,5 +18,6 @@ func _on_mouse_exited():
 	tween.tween_property(self, "scale", default_scale, 0.1)
 
 func _on_pressed():
+	SceneManager.temp_log_string = ActionLogger.export_logs_to_string()
 	var packed = load("res://scenes/record.tscn")
 	get_tree().change_scene_to_packed(packed)
