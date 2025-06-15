@@ -98,7 +98,7 @@ func _on_type_timer_timeout():
 		char_index += 1
 		type_timer.start()  # 繼續下一個字
 	else:
-		AudioRoot.stop_play_typing()  # ✅ 開始播放連續打字音效
+		AudioRoot.stop_typing() # ✅ 開始播放連續打字音效
 		next_button.disabled = false
 
 func _on_next_pressed():

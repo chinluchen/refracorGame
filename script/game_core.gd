@@ -6,6 +6,7 @@ extends Node
 func _ready():
 	# 播放淡入動畫
 	fade_animation.play("fade_in")
+	AudioRoot.play_bgm_for_scene("gamecore")
 
 	# 動畫完成後執行教學開始
 	fade_animation.animation_finished.connect(_on_fade_animation_finished)

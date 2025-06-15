@@ -6,6 +6,7 @@ func _ready():
 	var actions = ActionLogger.get_actions()
 	print("📥 進入 record 場景，log 數量：", actions.size())
 	update_display(actions)
+	AudioRoot.play_bgm_for_scene("record")
 
 func update_display(actions):
 	_clear_log_box()

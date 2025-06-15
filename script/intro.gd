@@ -9,6 +9,7 @@ func _ready():
 		start_button.pressed.connect(_on_start_pressed)
 	if introduction_button:
 		introduction_button.pressed.connect(_on_introduction_pressed)
+	AudioRoot.play_bgm_for_scene("intro")
 
 func _on_start_pressed():
 	print("Start button pressed, changing scene...")
