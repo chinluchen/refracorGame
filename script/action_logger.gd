@@ -24,6 +24,9 @@ func log_action(name: String, category: String = "", extra := {}):
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		label.text = "- " + name
 		log_container.add_child(label)
+		
+		logs.append({"action": name, "category": category})
+		print("📝 新 log：", name, "目前 logs 數量：", logs.size())
 
 func clear_logs():
 	logs.clear()
