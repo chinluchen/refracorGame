@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctaj0vr5yco6i"]
 
-[ext_resource type="FontFile" uid="uid://3jd6rmmfkdee" path="res://fonts/Cubic_11.woff2" id="1_ieuhh"]
+[ext_resource type="FontFile" uid="uid://cek5i4o2b6vbu" path="res://fonts/Cubic_11.woff2" id="1_ieuhh"]
 
 [sub_resource type="FontFile" id="FontFile_b3d6k"]
 cache/0/16/0/ascent = 0.0
