@@ -1,3 +1,4 @@
+#toRecord.gd
 extends TextureButton
 
 var default_scale = Vector2(1, 1)
