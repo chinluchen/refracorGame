@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctaj0vr5yco6i"]
+
+[ext_resource type="FontFile" uid="uid://cek5i4o2b6vbu" path="res://fonts/Cubic_11.woff2" id="1_ieuhh"]
+
+[sub_resource type="FontFile" id="FontFile_b3d6k"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Setting" type="Node2D"]
+
+[node name="cubicFont" type="Label" parent="."]
+offset_left = 206.0
+offset_top = 118.0
+offset_right = 246.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("1_ieuhh")
+theme_override_font_sizes/font_size = 60
+text = "CubicFont"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 262.0
+offset_top = 233.0
+offset_right = 302.0
+offset_bottom = 256.0
+theme_override_fonts/font = SubResource("FontFile_b3d6k")

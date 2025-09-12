@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="refractorGame"
-run/main_scene="res://intro.tscn"
+run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/images/icon.svg"
 
 [autoload]
 
-CursorManage="*res://cursor_manage.gd"
+CursorManage="*res://script/cursor_manage.gd"
+RefractorState="*res://script/refractor_state.gd"
+AudioRoot="*res://assets/sounds/audio_root.tscn"
+ActionLogger="*res://script/actionLogger.gd"
+SceneManager="*res://script/scene_manager.gd"
 
 [display]
 
@@ -25,10 +29,17 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://assets/images/hand.png"
 
 [editor]
 
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 version_control/custom_image="res://images/hand.png"
+
+[gui]
+
+theme/custom_font="res://fonts/Cubic_11.woff2"
 
 [rendering]
 

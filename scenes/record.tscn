@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwquuwuwm6t24"]
+
+[ext_resource type="Texture2D" uid="uid://bih6l5tqg2pn8" path="res://assets/images/background.png" id="1_d8xet"]
+[ext_resource type="Script" path="res://script/record.gd" id="1_i54p5"]
+[ext_resource type="Script" path="res://script/replay.gd" id="2_o32qc"]
+[ext_resource type="Script" path="res://script/return_to_level_select.gd" id="3_v15ep"]
+[ext_resource type="Script" path="res://script/back_to_menu.gd" id="4_h23x0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gmw6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14omo"]
+bg_color = Color(0.1, 0.1, 0.1, 0.921569)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg74j"]
+bg_color = Color(0.407316, 0.695661, 0.731773, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0w3pc"]
+bg_color = Color(0.890196, 0.678431, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj8c3"]
+bg_color = Color(0.272401, 0.483597, 0.668093, 1)
+
+[node name="record" type="Control"]
+custom_minimum_size = Vector2(860, 700)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 860.0
+offset_bottom = 716.0
+script = ExtResource("1_i54p5")
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+material = SubResource("CanvasItemMaterial_gmw6o")
+texture = ExtResource("1_d8xet")
+centered = false
+
+[node name="LogPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.043
+anchor_bottom = 0.051
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 800.02
+offset_bottom = 660.3
+theme_override_styles/panel = SubResource("StyleBoxFlat_14omo")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LogPanel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="LogPanel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="LogBox" type="VBoxContainer" parent="LogPanel/ScrollContainer/MarginContainer"]
+modulate = Color(0.809659, 0.856493, 0.765189, 0.968627)
+z_index = 30
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="BackToLevelSelect" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.04
+anchor_bottom = 0.021
+offset_left = -153.0
+offset_top = -105.0
+offset_right = -113.4
+offset_bottom = -51.7
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 320.0
+offset_right = 1242.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg74j")
+text = "再玩一次
+"
+script = ExtResource("2_o32qc")
+
+[node name="ReturnToLevelSelect" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 450.0
+offset_right = 1242.0
+offset_bottom = 562.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_0w3pc")
+text = "重選關卡"
+script = ExtResource("3_v15ep")
+
+[node name="BackToMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 580.0
+offset_right = 1242.0
+offset_bottom = 692.0
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_hj8c3")
+action_mode = 0
+text = "回主選單
+"
+script = ExtResource("4_h23x0")

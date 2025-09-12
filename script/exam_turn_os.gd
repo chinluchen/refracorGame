@@ -1,0 +1,47 @@
+extends Area2D
+
+@onready var exam_array_ui_os = get_tree().get_root().find_child("ExamArrayUIOS", true, false)
+@onready var eye_window_os = get_tree().get_root().find_child("EyeWindowOS", true, false)
+@onready var hint = get_tree().get_root().find_child("ExamTurnHintOS", true, false)
+
+var offset := Vector2.ZERO
+var target_angles = [62, 185, -75]
+var action_labels = ["使用稜鏡", "使用 JCC", "移除功能矩陣"]
+var current_index = 0
+
+func _ready():
+	if eye_window_os:
+		offset = global_position - eye_window_os.global_position
+	else:
+		print("⚠️ 找不到 EyeWindowOS")
+	
+	hint.visible = false
+	input_event.connect(_on_input_event)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+
+func _process(_delta):
+	if eye_window_os:
+		global_position = eye_window_os.global_position + offset
+
+func _on_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		AudioRoot.play_click()
+
+		var next_angle = target_angles[current_index]
+		var label = action_labels[current_index]
+
+		current_index = (current_index + 1) % target_angles.size()
+
+		var tween = create_tween()
+		tween.tween_property(exam_array_ui_os, "rotation_degrees", next_angle, 0.3)\
+			.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+
+		# ✅ 加入 log（OS）
+		ActionLogger.log_action("OS：" + label, "exam_turn")
+
+func _on_mouse_entered():
+	hint.visible = true
+
+func _on_mouse_exited():
+	hint.visible = false
